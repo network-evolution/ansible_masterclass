@@ -1,0 +1,1 @@
+same_host ansible_connection=local

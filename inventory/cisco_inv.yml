@@ -1,0 +1,23 @@
+all:
+  children:
+    routers:
+      vars:
+        ansible_become: 'true'
+        ansible_become_method: enable
+        ansible_become_password: admin
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_host: 192.168.0.63
+        ansible_network_os: cisco.ios.ios
+        ansible_password: admin
+        ansible_user: admin
+      children:
+        csr_group:
+          hosts:
+            r3:
+              ansible_host: 192.168.0.63
+        vios-group:
+          hosts:
+            r1:
+              ansible_host: 192.168.0.61
+            r2:
+              ansible_host: 192.168.0.62

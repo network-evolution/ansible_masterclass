@@ -1,0 +1,19 @@
+[vios-group]
+r1 ansible_host=192.168.0.61
+r2 ansible_host=192.168.0.62
+
+[csr_group]
+r3 ansible_host=192.168.0.63
+
+[routers:children]
+vios-group
+csr_group
+
+[routers:vars]
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=cisco.ios.ios
+ansible_user=admin
+ansible_password=admin
+ansible_become=true
+ansible_become_method=enable
+ansible_become_password=admin

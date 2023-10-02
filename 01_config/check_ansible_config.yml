@@ -1,0 +1,10 @@
+---
+- hosts: same_host
+  # gather_facts: false
+  tasks:
+    - name: Print ansible Config location
+      ansible.builtin.debug:
+        msg: 
+          - "{{ ansible_config_file }}"
+          - "{{ inventory_file }}"
+          - "{{ ansible_facts }}"
