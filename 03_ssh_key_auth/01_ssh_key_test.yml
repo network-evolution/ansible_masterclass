@@ -1,11 +1,14 @@
 ---
 - hosts: routers
   # gather_facts: false
+  vars_files: /home/dev/ansible_masterclass/inventory/secure_data.yml
   tasks:
     - name: Print ansible Config location
       ansible.builtin.debug:
         msg: 
           - "{{ ansible_config_file }}"
           - "{{ inventory_file }}"
-          # - "{{ ansible_facts }}"
+          - "{{ ansible_facts }}"
           - "{{ ansible_user}}"
+          - "{{ api_key }}"
+          - "{{ license_key }}"

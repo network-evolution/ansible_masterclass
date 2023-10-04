@@ -1,0 +1,25 @@
+---
+- name: Playbook Demo
+  hosts: all
+  vars:
+    test: "test_data"
+  # gather_facts: false
+
+  tasks:
+    - name: Print message
+      ansible.builtin.debug:
+        msg: "Linting Demo"
+    - name: Print ansible Config location
+      ansible.builtin.debug:
+        msg:
+          - "{{ ansible_config_file }}"
+          - "{{ inventory_file }}"
+          - "{{ ansible_facts }}"
+    - name: Print Router hostname
+      ansible.builtin.debug:
+        msg:
+          - "{{ ansible_host }}"
+          - "{{ ansible_facts.net_hostname }}"
+          - "{{ ansible_facts.net_model }}"
+          - "{{ ansible_facts.net_version }}"
+      when: ansible_connection == 'ansible.netcommon.network_cli'
