@@ -1,0 +1,26 @@
+---
+- name: Cisco ios facts demo
+  hosts: r3
+  tasks:
+
+    - name: Print ansible_facts from msg
+      ansible.builtin.debug:
+        msg: "{{ test_var }}"
+        verbosity: 3
+
+    - name: Print ansible_facts from var
+      ansible.builtin.debug:
+        var: test_var
+        
+    - name: Print ansible_facts
+      ansible.builtin.debug:
+        msg: |
+           IOS Type is:  {{ ansible_facts.net_iostype }}
+           Net Model No: {{ ansible_facts.net_model }}
+
+
+    - name: Print ansible_facts
+      ansible.builtin.debug:
+        msg: >
+           IOS Type is:  {{ ansible_facts.net_iostype }}
+           Net Model No: {{ ansible_facts.net_model }}
