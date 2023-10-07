@@ -1,0 +1,21 @@
+---
+- name: Configure domain name
+  hosts: r1
+  gather_facts: false
+  tasks:
+    - name: Configure domain
+      cisco.ios.ios_config:
+        lines: ip domain name testdomain1.com
+        diff_against: intended
+        intended_config: "{{ lookup('file', '/home/dev/ansible_masterclass/07_ios_config_demo/bkp/{{ inventory_hostname }}/golden_config/{{ inventory_hostname }}.txt')}}"
+        diff_ignore_lines:
+          - hostname *
+        backup: no
+        backup_options:
+          dir_path: ./07_ios_config_demo/bkp/{{ inventory_hostname }}/
+          filename: "{{ inventory_hostname }}_{{ ansible_ssh_host }}_{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S')}}.txt"
+      register: domain_config
+    
+    - name: Print COmmand Output
+      ansible.builtin.debug:
+        msg: "{{ domain_config }}"
