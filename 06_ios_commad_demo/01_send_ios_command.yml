@@ -1,0 +1,23 @@
+---
+- name: Configure domain name
+  hosts: routers
+  gather_facts: false
+  tasks:
+    - name: Send Command
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+        match: all
+        wait_for:
+          - result[0] contains cisco
+          - result[1] contains GigabitEthernet
+      register: show_command_output
+    
+    - name: Print show version
+      ansible.builtin.debug:
+        msg: "{{ show_command_output.stdout_lines[0] }}"
+
+    - name: Print show ip int brief
+      ansible.builtin.debug:
+        msg: "{{ show_command_output.stdout_lines[1] }}"

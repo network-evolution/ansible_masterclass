@@ -1,0 +1,26 @@
+---
+- name: Configure domain name
+  hosts: routers
+  gather_facts: false
+  tasks:
+    - name: Command with Prompt
+      cisco.ios.ios_command:
+        commands:
+          - command: clear counters GigabitEthernet {{ intf_num }}
+            prompt: 'Clear "show interface" counters on this interface \[confirm\]'
+            answer: 'y'
+      register: clear_counter
+
+    - name: Print clear counter
+      ansible.builtin.debug:
+        msg: "{{ clear_counter }}"
+
+    - name: Execute show interface
+      cisco.ios.ios_command: 
+        commands: show interface GigabitEthernet {{ intf_num }}
+      register: show_output
+
+    - name: Print show_output
+      ansible.builtin.debug:
+        msg: "{{ show_output }}"  
+
