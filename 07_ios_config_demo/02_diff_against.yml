@@ -16,6 +16,6 @@
           filename: "{{ inventory_hostname }}_{{ ansible_ssh_host }}_{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S')}}.txt"
       register: domain_config
     
-    - name: Print COmmand Output
+    - name: Print Command Output
       ansible.builtin.debug:
         msg: "{{ domain_config }}"

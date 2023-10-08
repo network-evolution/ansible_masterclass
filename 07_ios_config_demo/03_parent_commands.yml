@@ -1,0 +1,30 @@
+---
+- name: Configure intf name
+  hosts: r1
+  gather_facts: false
+  tasks:
+    # - name: Configure intf
+    #   cisco.ios.ios_config:
+    #     lines:
+    #       - description {{ item.description }}
+    #       - ip address {{ item.ip }} {{ item.mask }}
+    #     parents: interface {{ item.name }}
+    #   with_items: "{{ interface_list }}"
+    #   register: intf_config
+    
+    # - name: Print Command Output
+    #   ansible.builtin.debug:
+    #     msg: "{{ intf_config }}"
+
+#####################
+    - name: Configure intf
+      cisco.ios.ios_config:
+        lines: |
+          interface GigabitEthernet0/3
+            description from_literal_scalar
+            ip address 100.3.3.3 255.255.255.0
+      register: intf_config
+    
+    - name: Print Command Output
+      ansible.builtin.debug:
+        msg: "{{ intf_config }}"
