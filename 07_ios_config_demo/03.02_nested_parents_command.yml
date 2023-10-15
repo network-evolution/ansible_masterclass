@@ -1,0 +1,25 @@
+---
+- name: Configure archive log
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Configure archive log
+      cisco.ios.ios_config:
+        lines:
+          - record rc
+          - logging enable
+        parents:
+          - archive
+          - log config
+      register: archive_config
+
+    - name: Configure archive path
+      cisco.ios.ios_config:
+        lines:
+          - "path scp:"
+        parents:
+          - archive
+      register: archive_config    
+    - name: Print Command Output
+      ansible.builtin.debug:
+        msg: "{{ archive_config }}"

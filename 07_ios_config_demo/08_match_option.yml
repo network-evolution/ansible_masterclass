@@ -1,0 +1,32 @@
+---
+- name: Configure intf name
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Configure intf
+      cisco.ios.ios_config:
+        lines:
+          - description test_desc        
+          - ip address 22.2.2.2 255.255.255.0
+          - negotiation auto
+          - no mop enabled
+          - no mop sysid                  
+        parents: interface GigabitEthernet3
+        after: no shutdown
+        match: exact
+      register: intf_config
+    
+    - name: Print Command Output
+      ansible.builtin.debug:
+        msg: "{{ intf_config }}"
+
+    - name: Execute show ip interface
+      cisco.ios.ios_command:
+        commands: 
+          - show run int GigabitEthernet3
+          - show ip interface brief
+      register: intf_cmd
+
+    - name: Print Command Output
+      ansible.builtin.debug:
+        msg: "{{ intf_cmd.stdout_lines }}"
