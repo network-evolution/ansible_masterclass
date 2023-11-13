@@ -2,8 +2,10 @@ local_test ansible_connection=local
 
 [vios_group]
 r1 ansible_host=192.168.0.61 ansible_user=ansible_admin ansible_ssh_private_key_file=/home/dev/.ssh/id_rsa
+aws_csr ansible_host=13.212.176.7 ansible_user=ec2-user ansible_ssh_private_key_file=/home/dev/.ssh/csr_new.pem
 r2 ansible_host=192.168.0.62
 csr ansible_host=sandbox-iosxe-recomm-1.cisco.com ansible_user=developer ansible_password=lastorangerestoreball8876
+gns_r1 ansible_host=192.168.79.11
 
 [csr_group]
 r3 ansible_host=192.168.0.63
