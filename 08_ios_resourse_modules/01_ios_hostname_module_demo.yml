@@ -1,0 +1,63 @@
+- name: hostname module demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+######### merged ############################
+    # - name: Configure Hostname
+    #   cisco.ios.ios_hostname:
+    #     config:
+    #       hostname: r3
+    #     state: overridden
+    #   register: host_conf
+
+    # - name: Print hostname conf
+    #   ansible.builtin.debug:
+    #     msg: "{{ host_conf }}"
+######### gathered ##########################
+    # - name: Configure Hostname
+    #   cisco.ios.ios_hostname:
+    #     state: gathered
+    #   register: host_conf
+
+    # - name: Print hostname conf
+    #   ansible.builtin.debug:
+    #     msg: "{{ host_conf }}"
+
+######### rendered ##########################
+    # - name: Configure Hostname
+    #   cisco.ios.ios_hostname:
+    #     config:
+    #       hostname: r2
+    #     state: rendered
+    #   register: host_conf
+
+    # - name: Print hostname conf
+    #   ansible.builtin.debug:
+    #     msg: "{{ host_conf }}"
+######### parsed ############################
+
+    # - name: Configure Hostname
+    #   cisco.ios.ios_config:
+    #     backup: true
+    #     backup_options:
+    #       filename: r2.conf
+
+    # - name: Configure Hostname
+    #   cisco.ios.ios_hostname:
+    #     running_config: "{{ lookup('file', 'backup/test.cnf')}}"
+    #     state: parsed
+    #   register: host_conf
+
+    # - name: Print hostname conf
+    #   ansible.builtin.debug:
+    #     msg: "{{ host_conf }}"
+######### deleted ###########################
+
+    - name: Configure Hostname
+      cisco.ios.ios_hostname:
+        state: deleted
+      register: host_conf
+
+    - name: Print hostname conf
+      ansible.builtin.debug:
+        msg: "{{ host_conf }}"

@@ -1,0 +1,17 @@
+interface Loopback1001
+ ip address 1.1.1.10 255.255.255.0
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 192.168.0.62 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ mtu 9600
