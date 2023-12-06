@@ -1,0 +1,42 @@
+- name: interfaces module demo
+  hosts: sw1
+  gather_facts: false
+  tasks:
+    # - name: Gather L2 configs
+    #   cisco.ios.ios_l2_interfaces:
+    #     state: gathered
+    #   register: l2_config
+
+    # - name: Print Output
+    #   ansible.builtin.debug:
+    #     msg: "{{ l2_config }}"    
+
+#### merged #######################
+    # - name: Gather L2 configs
+    #   cisco.ios.ios_l2_interfaces:
+    #     config:
+    #       - name: GigabitEthernet0/2
+    #         mode: access
+    #         access:
+    #           vlan: 10
+    #     state: merged
+    #   register: l2_config
+
+    # - name: Print Output
+    #   ansible.builtin.debug:
+    #     msg: "{{ l2_config }}" 
+
+  ########### replaced #######################
+    - name: Gather L2 configs
+      cisco.ios.ios_l2_interfaces:
+        config:
+          - name: GigabitEthernet0/2
+            trunk:
+              allowed_vlans: 10-15
+              encapsulation: dot1q
+        state: replaced
+      register: l2_config
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l2_config }}" 

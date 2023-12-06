@@ -1,0 +1,33 @@
+---
+- name: PyATS Parser Demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+    - name: Ansible CLI Parse
+      ansible.utils.cli_parse:
+        command: show version
+        parser:
+          name: ansible.netcommon.pyats
+        set_fact: sh_ver
+      register: show_ver_parser
+
+    - name: Print sh_ver
+      ansible.builtin.debug:
+        msg: 
+          - "{{ show_ver_parser.parsed.version.hostname }}"
+          - "{{ show_ver_parser.parsed.version.version }}"
+          - "{{ show_ver_parser.parsed.version.system_image }}"
+          - "{{ sh_ver.version.hostname }}"
+
+      - name: Ansible CLI Parse
+        ansible.utils.cli_parse:
+          command: show ip interface brief
+          parser:
+            name: ansible.netcommon.pyats
+          set_fact: sh_ip_int
+        register: show_ip_int_parser
+
+      - name: Print sh_ip_int
+        ansible.builtin.debug:
+          msg: 
+            - "{{ show_ip_int_parser }}"

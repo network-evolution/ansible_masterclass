@@ -1,0 +1,43 @@
+- name: IOS Users
+  hosts: r2
+  gather_facts: false
+  tasks:
+  ######### Create User #############
+    - name: Create User
+      no_log: true
+      cisco.ios.ios_user:
+        name: ansible_admin
+        hashed_password:
+          type: 5
+          value: $1$pass$q.8O0ezj5JxZNEcvsQvQR0
+        privilege: 15
+      register: add_user
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ add_user }}" 
+ 
+  ######### Delete User #############
+    # - name: Create User
+    #   no_log: true
+    #   cisco.ios.ios_user:
+    #     name: ansible_admin1
+    #     state: absent
+    #   register: add_user
+
+    # - name: Print Output
+    #   ansible.builtin.debug:
+    #     msg: "{{ add_user }}"
+  ######### Purge Users #############
+
+    # - name: Create User
+    #   no_log: true
+    #   cisco.ios.ios_user:
+    #     # aggregate:
+    #     #   - name: cisco
+    #     purge: true
+    #   register: remove_user
+
+    # - name: Print Output
+    #   ansible.builtin.debug:
+    #     msg: "{{ remove_user }}"

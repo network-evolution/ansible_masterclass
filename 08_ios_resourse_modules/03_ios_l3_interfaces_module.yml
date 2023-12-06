@@ -1,0 +1,96 @@
+- name: interfaces module demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+######## gathered ##########################
+    - name: Gather L3 Config
+      cisco.ios.ios_l3_interfaces:
+        state: gathered
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+########  parsed  ##########################
+    - name: Prase L3 Config
+      cisco.ios.ios_l3_interfaces:
+        running_config: "{{ lookup('file', 'backup/r2.conf')}}"
+        state: parsed
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+
+######## rendered ##########################
+
+    - name: Rendered L3 Config
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+            ipv4:
+              - address: 10.10.10.1/28
+        state: rendered
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+
+########  merged  ##########################
+
+    - name: Rendered L3 Config
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+            ipv4:
+              - address: 10.10.10.2/28
+        state: merged
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+######## replaced ##########################
+    - name: Rendered L3 Config
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+            ipv4:
+              - address: 10.10.10.1/28
+        state: replaced
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+######## overridden ########################
+
+    - name: Rendered L3 Config
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet0/0
+            ipv4:
+              - address: 192.168.0.62/24
+
+          - name: GigabitEthernet0/1
+            ipv4:
+              - address: 10.10.10.1/28
+        state: overridden
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"
+
+######## deleted  ##########################
+    - name: deleted L3 Config
+      cisco.ios.ios_l3_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+        state: deleted
+      register: l3_config_output
+
+    - name: Print Output
+      ansible.builtin.debug:
+        msg: "{{ l3_config_output }}"

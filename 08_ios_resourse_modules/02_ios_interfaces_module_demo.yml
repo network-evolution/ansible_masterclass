@@ -2,91 +2,91 @@
   hosts: r2
   gather_facts: false
   tasks:
-######### gathered ##########################
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     state: gathered
-    #   register: intf_config
+######## gathered ##########################
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        state: gathered
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config.gathered }}"
-######### merged ############################
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config.gathered }}"
+######## merged ############################
 
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     config:
-    #       - name: GigabitEthernet0/0
-    #       - name: GigabitEthernet0/2
-    #         description: new_desc1
-    #         mtu: 1024
-    #         enabled: true
-    #     state: overridden
-    #   register: intf_config
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        config:
+          - name: GigabitEthernet0/0
+          - name: GigabitEthernet0/2
+            description: new_desc1
+            mtu: 1024
+            enabled: true
+        state: overridden
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config }}"
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config }}"
 
-######### rendered ##########################
+######## rendered ##########################
 
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     config:
-    #       - name: GigabitEthernet0/0
-    #       - name: GigabitEthernet0/2
-    #         description: new_desc1
-    #         mtu: 1024
-    #         enabled: true
-    #     state: rendered
-    #   register: intf_config
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        config:
+          - name: GigabitEthernet0/0
+          - name: GigabitEthernet0/2
+            description: new_desc1
+            mtu: 1024
+            enabled: true
+        state: rendered
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config.rendered }}"
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config.rendered }}"
 
-######### parsed ############################
+######## parsed ############################
 
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     running_config: "{{ lookup('file', 'backup/intf.cnf')}}"
-    #     state: parsed
-    #   register: intf_config
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        running_config: "{{ lookup('file', 'backup/intf.cnf')}}"
+        state: parsed
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config }}"
-######### template ############################
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config }}"
+######## template ############################
 
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     config:
-    #       - name: GigabitEthernet0/3
-    #         template: demo-template1
-    #     state: merged
-    #   register: intf_config
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        config:
+          - name: GigabitEthernet0/3
+            template: demo-template1
+        state: merged
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config }}"
-######### deleted ###########################
-    # - name: Interface Config
-    #   cisco.ios.ios_interfaces:
-    #     config:
-    #       - name: GigabitEthernet0/1
-    #       - name: GigabitEthernet0/2
-    #     state: deleted
-    #   register: intf_config
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config }}"
+######## deleted ###########################
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+          - name: GigabitEthernet0/2
+        state: deleted
+      register: intf_config
 
-    # - name: Print intf config
-    #   ansible.builtin.debug:
-    #     msg:
-    #       - "{{ intf_config }}"
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config }}"
 ######### purged ############################
     - name: Interface Config
       cisco.ios.ios_interfaces:

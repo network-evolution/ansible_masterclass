@@ -1,0 +1,17 @@
+---
+- name: NTC Templates Parser Demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+    - name: Ansible CLI Parse
+      ansible.utils.cli_parse:
+        command: show ip interface brief
+        parser:
+          name: ansible.netcommon.ntc_templates
+        set_fact: sh_ver
+      register: show_ver_parser
+
+    - name: Print sh_ver
+      ansible.builtin.debug:
+        msg: 
+          - "{{ sh_ver }}"

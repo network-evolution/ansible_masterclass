@@ -1,0 +1,18 @@
+---
+- name: NTC Templates Parser Demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+    - name: Ansible CLI Parse
+      ansible.utils.cli_parse:
+        command: show version
+        parser:
+          name: ansible.netcommon.textfsm
+          template_path: /home/dev/ansible_masterclass/09_cli_parser_utils/templates/ios_show_version_new.textfsm
+        set_fact: sh_ver
+      register: show_ver_parser
+
+    - name: Print sh_ver
+      ansible.builtin.debug:
+        msg: 
+          - "{{ sh_ver }}"
