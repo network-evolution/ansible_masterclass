@@ -1,0 +1,17 @@
+---
+- name: Magic Variables Demo
+  hosts: routers
+  gather_facts: false
+  tasks:
+    - name: Print magic variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ hostvars }}"
+          - "ansible_play_hosts: {{ ansible_play_hosts }}"
+          - "ansible_playbook_python: {{ ansible_playbook_python }}"
+          - "inventory_dir:{{ inventory_dir }}"
+          - "inventory_file:{{ inventory_file }}"
+          - "ansible_version:{{ ansible_version }}"
+          - "ansible_config_file:{{ ansible_config_file }}"
+          - "ansible_search_path:{{ ansible_search_path }}"
+          - "playbook_dir:{{ playbook_dir }}"

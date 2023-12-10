@@ -1,0 +1,29 @@
+---
+- name: Magic Variables Demo
+  hosts: r3
+  gather_facts: false
+  tasks:
+    # - name: Print pre-hostvars
+    #   ansible.builtin.debug:
+    #     msg: "{{ hostvars }}"
+
+    # - name: Interface Config
+    #   cisco.ios.ios_interfaces:
+    #     config:
+    #       - name: GigabitEthernet1
+    #         description: csr1000v mgmt int
+    #   register: csr_conf
+
+    # - debug: msg="{{ csr_conf }}"
+
+    # - name: Print post-hostvars
+    #   ansible.builtin.debug:
+    #     msg: "{{ hostvars[inventory_hostname]['csr_conf'] }}"
+        
+    - name: Configure domain
+      cisco.ios.ios_config:
+        lines: "ip domain name {{ hostvars['r2']['dc1_domain']}}"
+      register: domain_config
+
+    - debug:
+        msg: "{{ domain_config }}"        

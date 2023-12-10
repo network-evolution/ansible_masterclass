@@ -1,0 +1,39 @@
+---
+- name: Ansible facts Demo
+  hosts: routers
+  tasks:
+    # - name: Print ansible facts
+    #   ansible.builtin.debug:
+    #     msg:
+    #       # - "{{ ansible_facts }}"
+    #       # - "{{ ansible_facts.distribution }}"
+    #       # - "{{ ansible_facts.hostname }}"
+    #       # - "{{ ansible_facts.interfaces }}"
+    #       - "{{ ansible_facts }}"
+
+    # - name: Configure CSR1000v interface
+    #   when: ansible_facts.net_model == "CSR1000V"
+    #   cisco.ios.ios_interfaces:
+    #     config:
+    #       - name: GigabitEthernet1
+    #         description: mgmt int CSR1000v
+    #   register: int_conf
+
+    # - name: Configure CSR1000v interface
+    #   when: ansible_facts.net_model != "CSR1000V"
+    #   cisco.ios.ios_interfaces:
+    #     config:
+    #       - name: GigabitEthernet0/0
+    #         description: desc for IOSv
+    #   register: int_conf
+
+    # - debug: msg="{{ int_conf }}"
+
+    - name: Configure Routers
+      cisco.ios.ios_interfaces:
+        config:
+          - name: "{{ mgmt_int_list.get(ansible_facts.net_model).name }}"
+            description: "{{ mgmt_int_list.get(ansible_facts.net_model).description }}"
+      register: int_conf
+
+    - debug: msg="{{ int_conf.commands }}"
