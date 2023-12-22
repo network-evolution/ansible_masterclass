@@ -1,0 +1,39 @@
+---
+- name: Ansible Play vars
+  hosts: r3
+  vars:
+    ntp_server: 1.1.1.1
+    tacacs_servers:
+      - 10.1.1.1
+      - 20.1.1.1
+    bgp_config:
+      neighbor: 11.1.1.1
+      remote_as: 2
+      networks:
+        - 10.0.0.0
+        - 20.0.0.0
+    intf_conf:
+      - name: Gi1
+        descr: test1
+        ip: 1.1.1.1
+      - name: Gi2
+        descr: test2
+        ip: 1.1.1.2   
+    test_list: ['Loopback1', 'Loopback2']  
+    test_dict: {'name': 'Gi1', 'ip':'22.2.2'}  
+  vars_files:
+    - route_config.yml
+    - servers.yml
+  gather_facts: false
+  tasks:
+    - name: Print variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ inventory_hostname }}"
+          - "{{ tacacs_servers }}"
+          - "{{ bgp_config }}"
+          - "{{ intf_conf[0]['name'] }}"
+          - "{{ test_dict }}"
+          - "{{ gateway }}"
+          - "{{ ntp_server }}"        
+        

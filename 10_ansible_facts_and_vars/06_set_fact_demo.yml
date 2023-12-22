@@ -1,0 +1,55 @@
+---
+- name: Set fact demo
+  hosts: r2
+  vars:
+    vrf_name: "default_vrf"
+  gather_facts: false
+  tasks:
+    - name: Print variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ inventory_hostname }}"
+
+    # - name: Set fact vrf
+    #   when: hostvars[inventory_hostname]['ansible_host'] == '192.168.0.62'
+    #   ansible.builtin.set_fact:
+    #     vrf_name: "{{ inventory_hostname}}_vrf_from_set_fact"
+
+    # - name: Print variables
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ vrf_name }}"
+
+############## intf var ##########################
+    # - name: Create int name list
+    #   with_items: "{{ interface_list }}"
+    #   ansible.builtin.set_fact:
+    #     intf_list: "{{ intf_list | default([]) + [(item.name)]}}"
+
+    # - name: Print variables
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ intf_list }}"
+
+
+############ fetch intf details ########################
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        state: gathered
+      register: intf_config
+
+    # - name: Print intf config
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ intf_config.gathered }}"
+
+
+    - name: Create int name list
+      with_items: "{{ intf_config.gathered }}"
+      ansible.builtin.set_fact:
+        intf_list: "{{ intf_list | default([]) + [(item.name)]}}"
+
+    - name: Print variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_list }}"

@@ -1,0 +1,66 @@
+---
+- name: Ansible Play vars
+  hosts: r3
+  vars:
+    ntp_server: 1.1.1.1
+  vars_files:
+    - route_config.yml
+    - servers.yml
+  gather_facts: false
+  tasks:
+    - name: Print variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ gateway }}"
+
+  # ######## load files #####################
+  #   - name: Include from file
+  #     ansible.builtin.include_vars:
+  #       file: inc_vars_demo/route_inc.yml
+  #       name: inc_var
+
+  #   - name: Print variables
+  #     ansible.builtin.debug:
+  #       msg:
+  #         - "{{ gateway }}"
+  #         - "{{ hostvars[inventory_hostname] }}"
+        
+
+  # ######## load dir #####################
+  #   - name: Include from file
+  #     ansible.builtin.include_vars:
+  #       dir: inc_vars_demo
+  #       extensions: ['yml']
+  #       name: inc_var
+
+  #   - name: Print variables
+  #     ansible.builtin.debug:
+  #       msg:
+  #         - "{{ gateway }}"
+  #         - "{{ hostvars[inventory_hostname] }}"
+        
+  # ######## load host specific data #####################
+  #   - name: Include from file
+  #     ansible.builtin.include_vars:
+  #       file: "inc_vars_demo/route_inc_{{ inventory_hostname}}.yml"
+  #       name: inc_var
+
+  #   - name: Print variables
+  #     ansible.builtin.debug:
+  #       msg:
+  #         - "{{ gateway }}"
+  #         - "{{ hostvars[inventory_hostname] }}"        
+
+
+    ######## when condition #####################
+    - name: Include from file
+      when: ansible_network_os == 'cisco.ios.ios'
+      ansible.builtin.include_vars:
+        file: "inc_vars_demo/route_inc.yml"
+        name: inc_var
+
+    - name: Print variables
+      ansible.builtin.debug:
+        msg:
+          - "{{ gateway }}"
+          - "{{ hostvars[inventory_hostname] }}"  

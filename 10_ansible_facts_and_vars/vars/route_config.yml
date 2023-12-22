@@ -1,0 +1,5 @@
+gateway: 192.168.0.1
+ospf_process_id: 1
+ospf_area: 0
+ospf_net: 192.168.100.0
+ospf_wildcard: 0.0.0.255

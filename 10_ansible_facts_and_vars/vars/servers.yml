@@ -1,0 +1,4 @@
+dhcp_srv: 192.168.0.100
+dns_srv: 192.168.0.101
+ntp_server: 2.2.2.2
+tacacs_server_ip: 192.168.0.8

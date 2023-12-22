@@ -1,0 +1,6 @@
+gateway: 192.168.0.2
+ospf_process_id: 2
+ospf_area: 1
+ospf_net: 192.168.100.2
+ospf_wildcard: 0.0.0.255
+tacacs_server_ip: 192.168.0.9

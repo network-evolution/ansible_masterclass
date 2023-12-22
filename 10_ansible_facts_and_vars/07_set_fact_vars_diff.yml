@@ -1,0 +1,32 @@
+---
+- name: set_fact
+  hosts: r2
+  gather_facts: true
+  vars:
+    v_demo: "{{ now()}}"
+  tasks:
+    - name: Setfact
+      ansible.builtin.set_fact:
+        s_demo: "{{ now() }}"
+
+    - name: Print Pre data
+      ansible.builtin.debug:
+        msg:
+          - "{{ v_demo }}"
+          - "{{ s_demo }}"
+    
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        state: gathered
+      register: intf_config
+
+    - name: Print data
+      ansible.builtin.debug:
+        msg:
+          - "{{ hostvars[inventory_hostname] }}"
+
+    - name: Print Post data
+      ansible.builtin.debug:
+        msg:
+          - "{{ v_demo }}"
+          - "{{ s_demo }}"
