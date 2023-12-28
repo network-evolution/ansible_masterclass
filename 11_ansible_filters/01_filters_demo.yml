@@ -1,0 +1,235 @@
+---
+- name: Ansible facts Demo
+  hosts: r2
+  gather_facts: false
+  vars:
+    ospf_process_id: 2
+    vrf_name: 'mgmt1'
+    devices: ['r1', 'r2']
+    device_dict: {'r1': '1.1.1.1'}
+  tasks:
+  ######## default #########################
+    # - name: Print facts
+    #   ansible.builtin.debug:
+    #     msg:  "{{ ospf_process_id | default(1, true) }}"
+
+
+  ######## default(omit) ###################
+    # - name: Interface Config
+    #   with_items: "{{ interface_list }}"
+    #   cisco.ios.ios_interfaces:
+    #     config:
+    #       - name: "{{ item.name | default(omit) }}"
+    #         description: "{{ item.description | default(omit) }}"
+    #   register: intf_config
+
+    # - name: Print intf conf
+    #   ansible.builtin.debug:
+    #     msg:  "{{ intf_config }}"
+    
+
+  ######## ternary ###################
+    # - name: Ternary
+    #   ansible.builtin.set_fact:
+    #      vrf_type: "{{ ( vrf_name == 'mgmt') | ternary('management', 'non-management')}}"
+
+    # - name: Print ternary
+    #   ansible.builtin.debug:
+    #     msg: 
+    #       - "{{ vrf_type }}"
+    #       - "{{ vrf_type | type_debug }}"
+    #       - "{{ devices | type_debug }}"
+    #       - "{{ device_dict | type_debug }}"
+
+
+  ######## dict2items, items2dict ###################
+    # - name: Print dict2items
+    #   ansible.builtin.debug:
+    #     msg: "{{ ospf_vars | dict2items}}"
+
+    # - name: Print dict2items
+    #   ansible.builtin.debug:
+    #     msg: "{{ ospf_vars | dict2items(key_name='abc', value_name='cde')}}"
+
+    # - name: Print items2dict
+    #   ansible.builtin.debug:
+    #     msg: "{{ interface_list | items2dict(key_name='name', value_name='ip') }}"  
+
+
+  ######## to_json, to_yaml ###################
+    # - name: Save to_json
+    #   ansible.builtin.copy:
+    #     # content: "{{ ospf_vars | to_json }}"
+    #     # content: "{{ ospf_vars | to_nice_json }}"
+    #     content: "{{ ospf_vars | to_nice_json(indent=8) }}"
+    #     dest: to_nice_json_ind_demo.json
+
+    # - name: Save to_yaml
+    #   ansible.builtin.copy:
+    #     # content: "{{ interface_list | to_yaml }}"
+    #     content: "{{ interface_list | to_nice_yaml(indent=8) }}"
+    #     dest: to_nice_yaml_demo.yaml
+    
+
+  ######## from_json, from_yaml ###################
+    # - name: Print from json
+    #   ansible.builtin.debug:
+    #     msg: "{{ lookup('file','/home/dev/ansible_masterclass/to_json_demo.json' ) | from_json }}"
+    # - name: Print from yaml
+    #   ansible.builtin.debug:
+    #     msg: "{{ lookup('file','/home/dev/ansible_masterclass/to_yaml_demo.yaml' ) | from_yaml }}"
+
+
+  ######## zip, zip_longest ###################
+    # - name: Zip and zip_longest
+    #   ansible.builtin.set_fact:
+    #     #  route_list: "{{ dest_subs | zip(dest_gws) | list }}"
+    #      route_list: "{{ dest_subs | zip_longest(dest_gws, fillvalue='GigabitEthernet0/0') | list }}"
+
+    # - name: print zip data
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ route_list }}"
+
+    # - name: Generate route commands
+    #   loop: "{{ route_list }}"
+    #   ansible.builtin.set_fact:
+    #     route_conf: "{{ route_conf | default([]) + ['ip route ' + item[0] + ' 255.255.255.0 ' + item[1]] }}"
+
+    # - name: print zip data
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ route_conf }}"
+
+    # - name: create dict
+    #   ansible.builtin.set_fact:
+    #     #  route_list: "{{ dest_subs | zip(dest_gws) | list }}"
+    #      route_dict: "{{ dict(dest_subs | zip_longest(dest_gws, fillvalue='GigabitEthernet0/0')) }}"
+
+    # - name: print zip data
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ route_dict }}"
+
+
+  ######## Combine ###################
+    # - name: print Combine
+    #   ansible.builtin.debug:
+    #     msg: 
+    #       - "{{ {'Gi1': '1.1.1.1', 'Gi2': '2.2.2.2'} | combine({'Gi3': '3.3.3.3'}) }}"
+    #       - "{{ ['a', 'b'] + ['c','d', 'a'] }}"
+    #       - "{{ (['a', 'b'] + ['c','d', 'a']) | unique }}"
+
+
+######## map ###########################
+    # - name: print map
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ [0,3] | map('extract', dest_subs )}}"
+    #       - "{{ [0,3,2] | map('extract', dest_subs ) | list }}"
+    #       - "{{ ['name'] | map('extract', interface_list[1] )}}"
+    #       - "{{ interface_list | map(attribute='name')}}"
+
+######## list_operations ###########################
+    # - name: List Operations
+    #   vars:
+    #     data1: [1,2,3,4,5,6,7,10,11,12]
+    #     data2: [8,9,10,11,12]
+    #   ansible.builtin.debug:
+    #     msg:
+    #       # - "{{ [1,2,[3,4,5, [6,7,8,[9,10]]] ] | flatten }}"
+    #       # - "{{ data1 | union(data2) }}"    
+    #       # - "{{ data1 | intersect(data2) }}"    
+    #       # - "{{ data2 | difference(data1) }}"    
+    #       - "{{ data1 | symmetric_difference(data2) }}"  
+
+######## json_query ###########################
+    # - name: Interface Config
+    #   cisco.ios.ios_interfaces:
+    #     state: gathered
+    #   register: intf_config
+
+    # - name: Print intf config
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ intf_config }}"
+
+    # - name: Print enabled True interfaces
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - '{{ intf_config.gathered | json_query("[?description]") }}' ## prints interfaces with description
+    #       - '{{ intf_config.gathered | json_query("[?enabled==`true`]") }}'
+    #       - '{{ intf_config.gathered | json_query("[?enabled==`false`].[name]") }}'
+    #       - '{{ intf_config.gathered | json_query("[?enabled==`false`].name") }}'
+    #       - '{{ intf_config.gathered | json_query("[?enabled==`false`].{name: name, speed: speed}") }}'
+
+
+######## ip address ###########################
+    # - name: IP Address
+    #   vars:
+    #     ip_list:
+    #     - 192.168.0.1
+    #     - 192.168.1.0/24
+    #     - 192.168.100.23
+    #     - 300.1.1.1
+    #     - fd00::/8
+    #     - 100.10.10.1
+    #     - 192.168.10.1/24
+    #     - 192.168.0.22
+    #   ansible.builtin.debug:
+    #     msg:
+    #       # - "{{ '192.168.0.0' | ansible.utils.ipaddr }}"
+    #       - "{{ ip_list | ansible.utils.ipaddr }}"
+    #       - "{{ ip_list | ansible.utils.ipv4 }}"
+    #       - "{{ ip_list | ansible.utils.ipv6 }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('address') }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('host') }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('public') }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('net') }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('192.168.0.0/24') }}"
+    #       - "{{ ip_list | ansible.utils.ipv4('host/prefix') }}"
+    #       - "Address is: {{ ip_list[6] | ansible.utils.ipv4('address') }}"
+    #       - "Network is: {{ ip_list[6] | ansible.utils.ipv4('network') }}"
+    #       - "netmask is: {{ ip_list[6] | ansible.utils.ipv4('netmask') }}"
+    #       - "broadcast is: {{ ip_list[6] | ansible.utils.ipv4('broadcast') }}"
+    #       - "Usable: {{ ip_list[1] | ansible.utils.network_in_usable('192.168.1.0') }}"
+    #       - "Usable: {{ ip_list[1] | ansible.utils.network_in_usable('192.168.2.16/28') }}"
+
+######## URL Split ###########################
+    # - name: IP Address
+    #   vars:
+    #     test_url: "https://admin:pwd%40123@docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html"
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ test_url | urlsplit }}"
+    #       - "{{ test_url | urldecode }}"
+    #       - "{{ test_url | urlsplit('netloc') | urldecode }}"
+    #       - "{{ test_url | urlsplit('hostname')}}"
+
+######## String manipulation ###########################
+    # - name: String manipulation
+    #   vars:
+    #     user_list: ['user1', 'user2', 'user3']
+    #     user_text: 'admin1, admin2, admin3'
+    #     u_name: "Admin"
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ user_list | join(', ') }}"
+    #       - "{{ user_text | split(', ')}}"
+    #       - "{{ u_name | lower }}"
+    #       - "{{ u_name | upper }}"
+    #       - "{{ u_name | trim | lower }}"
+    #       - "{{ u_name [:3] }}"
+    #       - "{{ u_name [:-3] }}"
+    #       - "{{ u_name [3:] }}"
+    #       - "{{ u_name [-3:] }}"
+
+######## String manipulation ###########################
+    # - name: Datetime
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ '%Y-%d-%m %H:%M:%S' | strftime }}"
+    #       - "{{ '%Y-%m-%d %H:%M:%S' | strftime(utc=True) }}"
+    #       - "{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S')}}"
+    #       - "{{ ('%Y-%m-%d %H:%M:%S' | strftime | to_datetime ) - ('2023-12-23 10:00:01' | to_datetime) }}"
+    #       - "{{ (('%Y-%m-%d %H:%M:%S' | strftime | to_datetime ) - ('2023-12-23 10:00:01' | to_datetime)).total_seconds() }}"

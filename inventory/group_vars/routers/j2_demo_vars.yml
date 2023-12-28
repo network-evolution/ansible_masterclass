@@ -1,0 +1,4 @@
+ip_domain: demo.com
+u_name: admin_demo
+u_pass: admin_pwd
+add_default_route: true

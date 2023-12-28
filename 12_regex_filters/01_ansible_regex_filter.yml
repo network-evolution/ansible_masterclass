@@ -1,0 +1,32 @@
+---
+- name: Configure domain name
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Send Command
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+      register: show_command_output
+        
+    - name: Regex search
+      ansible.builtin.debug:
+        msg: 
+          # - "{{ show_command_output.stdout[0] }}"
+          - "{{ show_command_output.stdout[0] | regex_search('Cisco.+ Software, Version\\s(\\d\\S+)', '\\1') }}"
+          - "{{ show_command_output.stdout[0] | regex_search('(\\S+) uptime is (.+)', '\\1', '\\2', multiline=True) }}"
+          - "{{ show_command_output.stdout[0] | regex_search('(?P<hostname>\\S+) Uptime is (?P<uptime>.+)', '\\g<uptime>', '\\g<hostname>', multiline=True, ignorecase=True) }}"
+
+    - name: Regex findall
+      ansible.builtin.debug:
+        msg: 
+        # - "{{ show_command_output.stdout[1] }}"
+        - "{{ show_command_output.stdout[1] | regex_findall('(GigabitEthernet\\d)', multiline=True) }}"
+        - "{{ show_command_output.stdout[1] | regex_findall('(GigabitEthernet\\d)\\s+(\\S+)', multiline=True) }}"
+        - "{{ show_command_output.stdout[1] | regex_findall('(GigabitEthernet\\d)\\s+(\\S+)\\s+\\S+\\s\\S+\\s+(\\S+)', multiline=True) }}"
+
+    - name: Regex replace
+      ansible.builtin.debug:
+        msg: 
+          - "{{ show_command_output.stdout[1] | regex_replace('GigabitEthernet(\\d)', 'GigabitEthernet0/\\1', multiline=True)  }}"
