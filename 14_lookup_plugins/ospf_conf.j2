@@ -1,0 +1,4 @@
+[# this is ospf conf #]
+router ospf {{ ospf_vars.process_id }}
+network {{ ospf_vars.net }} {{ ospf_vars.wildcard }} area {{ ospf_vars.area }}
+network [% net2 %] {{ ospf_vars.wildcard }} area {{ ospf_vars.area }}

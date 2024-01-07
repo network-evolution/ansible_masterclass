@@ -9,7 +9,8 @@ interface_list:
     description: Gi3_descript
     ip: 100.1.3.3
     mask: 255.255.255.0
-
+  - name: GigabitEthernet0/4
+    description: Gi4_descript
 # dest_subs:
 #   - 10.1.1.0
 #   - 10.1.2.0

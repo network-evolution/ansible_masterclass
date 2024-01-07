@@ -1,0 +1,13 @@
+hostname {{ inventory_hostname | upper }}
+ip domain name {{ ip_domain }}
+{% if add_default_route %}
+ip route 0.0.0.0 0.0.0.0 192.168.0.1
+{% endif %}
+{% if inventory_hostname  in groups['csr_group'] %}
+interface GigabitEthernet1
+ description csr_mgmt interface
+{% endif %}
+{% if inventory_hostname  in groups['vios_group'] %}
+interface GigabitEthernet0/0
+ description vios_mgmt interface
+{% endif %}

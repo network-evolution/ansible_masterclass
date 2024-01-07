@@ -1,0 +1,64 @@
+---
+- name: Configure domain name
+  hosts: routers_j2_demo
+  gather_facts: false
+  tasks:
+     ########## 01 template ##################
+    # - name: Generate Conf
+    #   ansible.builtin.template:
+    #     src: device_conf.j2
+    #     dest: "demo_files/{{ inventory_hostname }}_device_conf.txt"
+
+    # - debug: msg="{{ groups }}"
+
+    ############ ios template ####################
+      # - name: Send config to Cisco
+      #   cisco.ios.ios_config:
+      #     src: device_conf.j2
+      #   register: ios_config
+
+      # - debug: msg="{{ ios_config }}"
+
+      ########### for loop #########################
+      # - name: Zip filter
+      #   ansible.builtin.set_fact:
+      #     route_list: "{{ dest_subs | zip(dest_gws) | list }}"
+
+      # - debug: msg="{{ route_list }}"
+
+      # - name: Generate ip route conf using for loop
+      #   ansible.builtin.template:
+      #     src: for_loop.j2
+      #     dest: "demo_files/{{ inventory_hostname }}_ip_route_conf.txt"
+
+      ########### jinja2 include #########################
+
+      # - name: Zip filter
+      #   ansible.builtin.set_fact:
+      #     route_list: "{{ dest_subs | zip(dest_gws) | list }}"
+
+      # - debug: msg="{{ route_list }}"
+      # - name: jinja2 include option demo
+      #   ansible.builtin.template:
+      #     src: include_demo.j2
+      #     dest: "demo_files/{{ inventory_hostname }}_include_all_conf.txt"
+
+    ############### jinja2 code example ######################
+        - name: Create list of interface names
+          ansible.builtin.set_fact:
+            intf_lst: "{{ interface_list | map(attribute='name') }}"
+
+        - debug: msg="{{ intf_lst }}"
+
+        - name: Jinja2 code
+          ansible.builtin.set_fact:
+            intf_list: |
+                      {% set intf_name_lst = [] %}
+                      {% for intf_details in interface_list  %}
+                      {% set intf_name = intf_details.get('name') %}
+                      {% set intf_name_lst = intf_name_lst.append(intf_name) %}
+                      {% endfor %}
+                      {{ intf_name_lst }}
+
+        - debug: msg="{{ intf_list }}"
+                    

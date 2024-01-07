@@ -1,0 +1,5 @@
+interface_list:
+  - name: GigabitEthernet1
+    description: Gi1_descript
+  - name: GigabitEthernet2
+    description: Gi2_descript

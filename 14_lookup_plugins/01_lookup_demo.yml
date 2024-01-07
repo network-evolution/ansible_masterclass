@@ -1,0 +1,77 @@
+---
+- name: Configure domain name
+  hosts: r1
+  gather_facts: false
+  tasks:
+  ####### file lookup ##############
+    # - name: File lookup example
+    #   ansible.builtin.debug:
+    #     msg:
+    #       # - "{{ lookup('file', 'ios_conf1.txt', errors='ignore') }}"
+    #       # - "{{ lookup('file', 'ios_conf.txt', errors='warn') }}"
+    #       # - "{{ lookup('file', 'ios_conf1.txt', errors='strict') }}"
+    #       # - "{{ lookup('file', 'ios_conf.txt', errors='strict', wantlist=True) }}"
+    #       # - "{{ lookup('file', 'ios_conf.txt', errors='strict') }}"
+    #       - "{{ lookup('file', 'ios_conf.txt', errors='strict', lstrip=True, rstrip=False) }}"
+
+  ####### template lookup ##########
+
+    # - name: Template lookup example
+    #   ansible.builtin.debug:
+    #     msg:
+    #       # - "{{ lookup('template', 'ospf_conf.j2') }}"
+    #       # - "{{ lookup('template', 'ospf_conf.j2') | upper }}"
+    #       - "{{ lookup('template', 'ospf_conf.j2',
+    #                                 comment_start_string='[#',
+    #                                 comment_end_string='#]',
+    #                                 template_vars={'net2': '192.168.101.0'},
+    #                                 variable_start_string='[%',
+    #                                 variable_end_string='%]',
+    #                                 ) }}"
+
+
+  ####### var lookup ###############
+    # - name: Vars lookup example
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ lookup('vars', '{{ inventory_hostname}}_location')}}"
+
+  ####### env lookup ###############
+    # - name: Env lookup example
+    #   ansible.builtin.debug:
+    #     msg:
+    #       - "{{ lookup('env', 'HOME')}}"
+    #       - "{{ lookup('env', 'VIRTUAL_ENV')}}"
+    #       - "{{ lookup('env', 'VIRTUAL_ENV1')}}"
+    #       - "{{ lookup('env', 'VIRTUAL_ENV1', default='no_environment_set')}}"
+    #       - "{{ lookup('env', 'VIRTUAL_ENV1', default=undefined)}}"
+
+  ####### pipe lookup ###############
+    - name: pipe lookup example
+      ansible.builtin.debug:
+        msg:
+          - "{{ lookup('pipe', 'date')}}"
+          - "{{ lookup('pipe', 'date +%Y-%m-%d@%H:%M:%S')}}"
+          - "{{ lookup('pipe', 'pwd')}}"
+          # - "{{ lookup('pipe', 'pwd1', errors='ignore')}}"
+          # - "{{ lookup('pipe', 'pwd1', errors='warn')}}"
+          - "{{ lookup('pipe', 'pwd1', errors='strict')}}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ####### pipe lookup ##############

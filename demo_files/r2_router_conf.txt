@@ -1,6 +1,0 @@
-hostname r2
-ip domain-name demo.com
-username admin_demo secret admin_pwd privilege 15
-ip route 0.0.0.0 0.0.0.0 192.168.0.1
-interface GigabitEthernet0/0
- vios_mgmt interface

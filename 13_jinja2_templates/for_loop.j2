@@ -1,0 +1,3 @@
+{% for route_cnf in route_list %}
+ip route {{ route_cnf[0] }} 255.255.255.0 {{ route_cnf[1] }}
+{% endfor %}

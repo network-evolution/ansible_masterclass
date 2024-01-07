@@ -1,5 +1,5 @@
-hostname r102
+hostname R3
 ip domain name demo.com
-ip route 0.0.0.0 0.0.0.0 192.168.1.1
+ip route 0.0.0.0 0.0.0.0 192.168.0.1
 interface GigabitEthernet1
  description csr_mgmt interface

@@ -1,0 +1,11 @@
+! this is a sample configuration
+{% include 'device_conf.j2' %}
+{% include 'for_loop.j2' %}
+{% include 'ospf_conf.j2' %}
+
+{% if inventory_hostname  in groups['csr_group'] %}
+{% include 'csr_conf.j2' %}
+{% endif %}
+{% if inventory_hostname  in groups['vios_group'] %}
+{% include 'vios_conf.j2' %}
+{% endif %}
