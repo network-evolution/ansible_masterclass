@@ -52,8 +52,8 @@ all:
           hosts:
             r3:
               ansible_host: 192.168.0.63
-            r102:
-              ansible_host: 192.168.1.102                 
+            # r102:
+            #   ansible_host: 192.168.1.102                 
         vios_group:
           hosts:
             r1:
@@ -63,13 +63,13 @@ all:
             r2:
               tacacs_server_ip: 192.168.0.6
               ansible_host: 192.168.0.62
-            r101:
-              ansible_host: 192.168.1.101            
+            # r101:
+            #   ansible_host: 192.168.1.101            
     
-    routers100:
-      hosts:
-        r101:
-        r102:
+    # routers100:
+    #   hosts:
+    #     r101:
+    #     r102:
     routers_j2_demo:
       hosts:
         r1:

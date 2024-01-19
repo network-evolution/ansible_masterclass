@@ -1,0 +1,47 @@
+---
+- name: When conditional Demo
+  hosts: routers
+  # gather_facts: false
+  tasks:
+    - name: Print facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+
+    - name: Gather Interfaces
+      cisco.ios.ios_interfaces:
+        state: gathered
+      register: intf_config
+
+      ####### simple when condition #######
+    # - name: Print vIOS intf config
+    #   when: ansible_facts.net_model =="IOSv"
+    #   ansible.builtin.debug:
+    #     msg: "{{ intf_config }}"
+
+      ####### and #######
+    # - name: Print vIOS intf config
+    #   when: ansible_facts.net_model =="IOSv" and ansible_facts.net_hostname == "r2"
+    #   ansible.builtin.debug:
+    #     msg: "{{ intf_config }}"
+
+      ####### and in list format #######
+    # - name: Print vIOS intf config
+    #   when: 
+    #     - ansible_facts.net_model =="IOSv"
+    #     - ansible_facts.net_hostname == "r2"
+    #   ansible.builtin.debug:
+    #     msg: "{{ intf_config }}"
+
+      ####### or #######
+    # - name: Print vIOS intf config
+    #   when: ansible_facts.net_model =="IOSv" or ansible_facts.net_model =="CSR1000V"
+    #   ansible.builtin.debug:
+    #     msg: "{{ intf_config }}"
+
+
+      ####### group conditions #######
+    - name: Print vIOS intf config
+      when: (ansible_facts.net_model =="IOSv" and ansible_facts.net_hostname == "r2") or
+            (ansible_facts.net_hostname == "CSR-17.3")
+      ansible.builtin.debug:
+        msg: "{{ intf_config }}"

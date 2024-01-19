@@ -1,0 +1,58 @@
+---
+- name: Configure domain name
+  hosts: r2
+  gather_facts: false
+  vars:
+    ips:
+      - 10.1.1.1
+      - 10.1.1.2 
+      - [10.1.1.3, 10.1.1.4]
+  tasks:
+    # - name: With_items demo
+    #   ansible.builtin.debug:
+    #     msg: "{{ item }}"
+    #   with_items: "{{ ips }}"
+
+    # - name: Loop demo
+    #   ansible.builtin.debug:
+    #     msg: "{{ item }}"
+    #   loop: "{{ ips | flatten }}"
+
+    # - name: With_list demo
+    #   ansible.builtin.debug:
+    #     msg: "{{ item }}"
+    #   loop: "{{ ips | flatten }}"
+
+      ######### with_dict demo ##############
+
+    # - name: With_dict demo
+    #   ansible.builtin.debug:
+    #     msg: "OSPF {{ item.key }} is {{ item.value }}"
+    #   with_dict: "{{ ospf_vars }}"
+
+    # - name: Print dict2items
+    #   ansible.builtin.debug:
+    #     msg: "{{ ospf_vars | dict2items}}"
+
+    # - name: Loop demo
+    #   ansible.builtin.debug:
+    #     msg: "OSPF {{ item.key }} is {{ item.value }}"
+    #   loop: "{{ ospf_vars | dict2items }}"
+    
+      ######### with_together demo ##############
+
+    - name: With_together demo
+      ansible.builtin.debug:
+        msg: "Subnet is {{ item.0 }} Gateway is {{ item.0 }}"
+      with_together:
+        - "{{ dest_subs }}"
+        - "{{ dest_gws }}"
+
+    # - name: Print zip
+    #   ansible.builtin.debug:
+    #     msg: "{{ dest_subs | zip(dest_gws) | list }}"
+
+    - name: With_together demo
+      ansible.builtin.debug:
+        msg: "Subnet is {{ item.0 }} Gateway is {{ item.0 }}"
+      loop: "{{ dest_subs | zip(dest_gws) | list }}"       
