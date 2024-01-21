@@ -1,0 +1,771 @@
+2024-01-20 13:17:18,524 p=118941 u=dev n=ansible | PLAY [Strategies demo] *************************************************************************************************************
+2024-01-20 13:17:18,559 p=118941 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:17:18,622 p=118941 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 13:17:18,653 p=118941 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:17:18,674 p=118941 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 13:17:18,689 p=118941 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 13:17:18,733 p=118941 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 13:17:18,775 p=118941 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 13:17:18,825 p=118941 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 13:17:18,833 p=118941 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 13:17:18,850 p=118941 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 13:17:18,869 p=118941 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 13:17:18,872 p=118941 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:17:18,912 p=118941 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:18,963 p=118941 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:18,997 p=118941 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,014 p=118941 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,029 p=118941 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,051 p=118941 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,077 p=118941 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,080 p=118941 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,089 p=118941 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,104 p=118941 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:17:19,162 p=118941 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:17:19,162 p=118941 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,162 p=118941 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,163 p=118941 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,163 p=118941 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,163 p=118941 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,169 p=118941 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,170 p=118941 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,170 p=118941 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,171 p=118941 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:17:19,171 p=118941 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:15,601 p=119044 u=dev n=ansible | PLAY [Strategies demo] *************************************************************************************************************
+2024-01-20 13:18:15,635 p=119044 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:18:15,731 p=119044 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 13:18:15,752 p=119044 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 13:18:15,801 p=119044 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 13:18:15,879 p=119044 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:18:15,905 p=119044 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 13:18:15,934 p=119044 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 13:18:15,935 p=119044 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 13:18:15,936 p=119044 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 13:18:15,951 p=119044 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 13:18:15,986 p=119044 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 13:18:15,992 p=119044 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:18:16,038 p=119044 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,082 p=119044 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,136 p=119044 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,155 p=119044 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,185 p=119044 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,216 p=119044 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,253 p=119044 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,261 p=119044 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,269 p=119044 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,293 p=119044 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:18:16,363 p=119044 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:18:16,363 p=119044 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,364 p=119044 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,364 p=119044 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,364 p=119044 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,365 p=119044 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,365 p=119044 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,366 p=119044 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,366 p=119044 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,367 p=119044 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:18:16,367 p=119044 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:18,517 p=119126 u=dev n=ansible | PLAY [Strategies demo] *************************************************************************************************************
+2024-01-20 13:19:18,549 p=119126 u=dev n=ansible | TASK [Print hostname msg={{ inventory_hostname }}] *********************************************************************************
+2024-01-20 13:19:18,616 p=119126 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 13:19:18,661 p=119126 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:19:18,678 p=119126 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 13:19:18,721 p=119126 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 13:19:18,790 p=119126 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 13:19:18,827 p=119126 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 13:19:18,850 p=119126 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 13:19:18,852 p=119126 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 13:19:18,874 p=119126 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 13:19:18,896 p=119126 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 13:19:18,900 p=119126 u=dev n=ansible | TASK [Print hello msg=Hey there] ***************************************************************************************************
+2024-01-20 13:19:18,944 p=119126 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:18,987 p=119126 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,005 p=119126 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,046 p=119126 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,062 p=119126 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,090 p=119126 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,132 p=119126 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,135 p=119126 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,136 p=119126 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,152 p=119126 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:19:19,211 p=119126 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:19:19,211 p=119126 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,212 p=119126 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,213 p=119126 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,213 p=119126 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:19:19,213 p=119126 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:38:05,166 p=119285 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:38:05,178 p=119285 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:38:05,207 p=119285 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:38:05,209 p=119285 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:38:05,234 p=119285 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:38:05,237 p=119285 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:38:05,720 p=119285 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:38:05,724 p=119285 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:38:05,753 p=119285 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:38:05,756 p=119285 u=dev n=ansible | TASK [Print Final Task] ************************************************************************************************************
+2024-01-20 13:38:05,781 p=119285 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Final Task"
+}
+2024-01-20 13:38:05,789 p=119285 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:38:05,790 p=119285 u=dev n=ansible | demo01                     : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:44:03,324 p=119578 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:44:03,338 p=119578 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:44:03,371 p=119578 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:44:03,376 p=119578 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:44:03,406 p=119578 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:44:03,413 p=119578 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:44:03,948 p=119578 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:44:03,951 p=119578 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:44:04,007 p=119578 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:44:04,011 p=119578 u=dev n=ansible | TASK [Print Final Task] ************************************************************************************************************
+2024-01-20 13:44:04,051 p=119578 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Final Task"
+}
+2024-01-20 13:44:04,061 p=119578 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:44:04,062 p=119578 u=dev n=ansible | demo01                     : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:44:28,239 p=119703 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:44:28,251 p=119703 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:44:28,284 p=119703 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:44:28,286 p=119703 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:44:28,318 p=119703 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:44:28,325 p=119703 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:44:28,884 p=119703 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:44:28,887 p=119703 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:44:28,919 p=119703 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:44:28,924 p=119703 u=dev n=ansible | TASK [Print Final Task] ************************************************************************************************************
+2024-01-20 13:44:28,954 p=119703 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Final Task"
+}
+2024-01-20 13:44:28,966 p=119703 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:44:28,967 p=119703 u=dev n=ansible | demo01                     : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:45:28,100 p=119824 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:45:28,117 p=119824 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:45:28,652 p=119824 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:45:28,659 p=119824 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:45:28,734 p=119824 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:45:28,755 p=119824 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:45:28,756 p=119824 u=dev n=ansible | demo01                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:45:42,149 p=119926 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:45:42,163 p=119926 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:45:42,729 p=119926 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:45:42,732 p=119926 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:45:42,768 p=119926 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:45:42,779 p=119926 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:45:42,781 p=119926 u=dev n=ansible | demo01                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:47:02,001 p=120059 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:47:02,015 p=120059 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:47:02,040 p=120059 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:47:02,045 p=120059 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:47:02,589 p=120059 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:47:02,594 p=120059 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:47:02,628 p=120059 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:47:02,633 p=120059 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:47:02,634 p=120059 u=dev n=ansible | demo01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:47:40,343 p=120161 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:47:40,358 p=120161 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:47:40,390 p=120161 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:47:40,392 p=120161 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:47:40,962 p=120161 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:47:40,966 p=120161 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:47:40,997 p=120161 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:47:41,004 p=120161 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:47:41,005 p=120161 u=dev n=ansible | demo01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:47:54,505 p=120254 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:47:54,517 p=120254 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:47:54,548 p=120254 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:47:54,553 p=120254 u=dev n=ansible | TASK [Execute shell] ***************************************************************************************************************
+2024-01-20 13:47:55,149 p=120254 u=dev n=ansible | changed: [demo01]
+2024-01-20 13:47:55,155 p=120254 u=dev n=ansible | TASK [Print shell output] **********************************************************************************************************
+2024-01-20 13:47:55,214 p=120254 u=dev n=ansible | ok: [demo01] => {
+    "msg": "/home/dev/ansible_masterclass/16_ansible_play_options"
+}
+2024-01-20 13:47:55,235 p=120254 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:47:55,238 p=120254 u=dev n=ansible | demo01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:48:01,858 p=120317 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:48:01,871 p=120317 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:48:01,907 p=120317 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:48:01,911 p=120317 u=dev n=ansible | TASK [Print Final Task] ************************************************************************************************************
+2024-01-20 13:48:01,942 p=120317 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Final Task"
+}
+2024-01-20 13:48:01,953 p=120317 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:48:01,954 p=120317 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 13:48:44,286 p=120434 u=dev n=ansible | PLAY [Log Path Demo] ***************************************************************************************************************
+2024-01-20 13:48:44,300 p=120434 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 13:48:44,333 p=120434 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 13:48:44,338 p=120434 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 13:48:44,372 p=120434 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 13:48:44,378 p=120434 u=dev n=ansible | TASK [Print Final Task] ************************************************************************************************************
+2024-01-20 13:48:44,409 p=120434 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Final Task"
+}
+2024-01-20 13:48:44,416 p=120434 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 13:48:44,416 p=120434 u=dev n=ansible | demo01                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:36,550 p=120617 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:06:36,585 p=120617 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:06:36,696 p=120617 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:06:36,722 p=120617 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:06:36,752 p=120617 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 14:06:36,772 p=120617 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 14:06:36,800 p=120617 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 14:06:36,850 p=120617 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 14:06:36,854 p=120617 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 14:06:36,854 p=120617 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 14:06:36,857 p=120617 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 14:06:36,880 p=120617 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 14:06:36,886 p=120617 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:06:36,965 p=120617 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:36,980 p=120617 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:36,997 p=120617 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,033 p=120617 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,049 p=120617 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,066 p=120617 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,099 p=120617 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,101 p=120617 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,116 p=120617 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,137 p=120617 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:06:37,215 p=120617 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:06:37,215 p=120617 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,215 p=120617 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,216 p=120617 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,216 p=120617 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,216 p=120617 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,217 p=120617 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,217 p=120617 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,217 p=120617 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,218 p=120617 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:06:37,218 p=120617 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:07:25,032 p=120784 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:07:25,047 p=120784 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:07:25,081 p=120784 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:07:25,084 p=120784 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:07:25,114 p=120784 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:07:25,125 p=120784 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:07:25,125 p=120784 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:07:34,204 p=120833 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:07:34,219 p=120833 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:07:34,259 p=120833 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:07:34,266 p=120833 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:07:34,304 p=120833 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:07:34,313 p=120833 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:07:34,314 p=120833 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:08:07,980 p=120891 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:08:07,992 p=120891 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:08:08,025 p=120891 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:08:08,033 p=120891 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:08:08,064 p=120891 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:08:08,074 p=120891 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:08:08,074 p=120891 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:08:15,652 p=120916 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:08:15,665 p=120916 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:08:15,699 p=120916 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:08:15,702 p=120916 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:08:15,735 p=120916 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:08:15,747 p=120916 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:08:15,747 p=120916 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:08:40,769 p=120968 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:08:40,785 p=120968 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:08:40,821 p=120968 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:08:40,824 p=120968 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:08:40,856 p=120968 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:08:40,868 p=120968 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:08:40,869 p=120968 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:09:38,130 p=121022 u=dev n=ansible | [WARNING]: While constructing a mapping from /home/dev/ansible_masterclass/16_ansible_play_options/inventory.yml, line 6, column
+11, found a duplicate dict key (demo01). Using last defined value only.
+
+2024-01-20 14:09:38,140 p=121022 u=dev n=ansible | ERROR! Specified inventory, host pattern and/or --limit leaves us with no hosts to target.
+2024-01-20 14:10:13,242 p=121066 u=dev n=ansible | [WARNING]: While constructing a mapping from /home/dev/ansible_masterclass/16_ansible_play_options/inventory.yml, line 6, column
+11, found a duplicate dict key (demo01). Using last defined value only.
+
+2024-01-20 14:10:13,254 p=121066 u=dev n=ansible | ERROR! Specified inventory, host pattern and/or --limit leaves us with no hosts to target.
+2024-01-20 14:10:20,141 p=121109 u=dev n=ansible | [WARNING]: While constructing a mapping from /home/dev/ansible_masterclass/16_ansible_play_options/inventory.yml, line 6, column
+11, found a duplicate dict key (demo01). Using last defined value only.
+
+2024-01-20 14:10:20,156 p=121109 u=dev n=ansible | ERROR! Specified inventory, host pattern and/or --limit leaves us with no hosts to target.
+2024-01-20 14:12:11,761 p=121247 u=dev n=ansible | [WARNING]: While constructing a mapping from /home/dev/ansible_masterclass/16_ansible_play_options/inventory.yml, line 7, column
+13, found a duplicate dict key (demo01). Using last defined value only.
+
+2024-01-20 14:12:11,899 p=121247 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:12:11,915 p=121247 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:12:11,951 p=121247 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:12:11,953 p=121247 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:12:11,983 p=121247 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:12:11,989 p=121247 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:12:11,990 p=121247 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:13:43,407 p=121329 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:13:43,423 p=121329 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:13:43,454 p=121329 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:13:43,456 p=121329 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:13:43,483 p=121329 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:13:43,491 p=121329 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:13:43,492 p=121329 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:15:54,281 p=121438 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:15:54,299 p=121438 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:15:54,337 p=121438 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:15:54,367 p=121438 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:15:54,372 p=121438 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:15:54,407 p=121438 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:15:54,430 p=121438 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:15:54,448 p=121438 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:15:54,448 p=121438 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:15:54,449 p=121438 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:54,649 p=121609 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:16:54,680 p=121609 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:16:54,765 p=121609 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 14:16:54,779 p=121609 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 14:16:54,811 p=121609 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 14:16:54,835 p=121609 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 14:16:54,867 p=121609 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 14:16:54,895 p=121609 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 14:16:54,915 p=121609 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 14:16:54,915 p=121609 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 14:16:54,952 p=121609 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:16:54,958 p=121609 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:16:55,000 p=121609 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,029 p=121609 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,069 p=121609 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,088 p=121609 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,115 p=121609 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,140 p=121609 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,148 p=121609 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,169 p=121609 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,170 p=121609 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:16:55,226 p=121609 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:16:55,227 p=121609 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,227 p=121609 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,228 p=121609 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,228 p=121609 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,229 p=121609 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,229 p=121609 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,230 p=121609 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,231 p=121609 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:16:55,233 p=121609 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:25,997 p=121716 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:17:26,011 p=121716 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:17:26,045 p=121716 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:17:26,049 p=121716 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:17:26,088 p=121716 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:26,098 p=121716 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:17:26,098 p=121716 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:46,948 p=121798 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:17:46,983 p=121798 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:17:47,049 p=121798 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 14:17:47,073 p=121798 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 14:17:47,127 p=121798 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 14:17:47,148 p=121798 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 14:17:47,195 p=121798 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 14:17:47,196 p=121798 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 14:17:47,197 p=121798 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 14:17:47,206 p=121798 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:17:47,221 p=121798 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:17:47,231 p=121798 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:17:47,270 p=121798 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,316 p=121798 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,338 p=121798 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,355 p=121798 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,383 p=121798 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,402 p=121798 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,431 p=121798 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,449 p=121798 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,466 p=121798 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:17:47,515 p=121798 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:17:47,516 p=121798 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,516 p=121798 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,516 p=121798 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,517 p=121798 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,517 p=121798 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,517 p=121798 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,517 p=121798 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,518 p=121798 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:17:47,518 p=121798 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,087 p=121884 u=dev n=ansible | PLAY [Limit Demo] ******************************************************************************************************************
+2024-01-20 14:18:10,122 p=121884 u=dev n=ansible | TASK [Print hostname] **************************************************************************************************************
+2024-01-20 14:18:10,198 p=121884 u=dev n=ansible | ok: [demo03] => {
+    "msg": "demo03"
+}
+2024-01-20 14:18:10,243 p=121884 u=dev n=ansible | ok: [demo04] => {
+    "msg": "demo04"
+}
+2024-01-20 14:18:10,266 p=121884 u=dev n=ansible | ok: [demo05] => {
+    "msg": "demo05"
+}
+2024-01-20 14:18:10,290 p=121884 u=dev n=ansible | ok: [demo06] => {
+    "msg": "demo06"
+}
+2024-01-20 14:18:10,316 p=121884 u=dev n=ansible | ok: [demo07] => {
+    "msg": "demo07"
+}
+2024-01-20 14:18:10,353 p=121884 u=dev n=ansible | ok: [demo08] => {
+    "msg": "demo08"
+}
+2024-01-20 14:18:10,388 p=121884 u=dev n=ansible | ok: [demo09] => {
+    "msg": "demo09"
+}
+2024-01-20 14:18:10,390 p=121884 u=dev n=ansible | ok: [demo01] => {
+    "msg": "demo01"
+}
+2024-01-20 14:18:10,394 p=121884 u=dev n=ansible | ok: [demo10] => {
+    "msg": "demo10"
+}
+2024-01-20 14:18:10,412 p=121884 u=dev n=ansible | ok: [demo02] => {
+    "msg": "demo02"
+}
+2024-01-20 14:18:10,418 p=121884 u=dev n=ansible | TASK [Print hello] *****************************************************************************************************************
+2024-01-20 14:18:10,465 p=121884 u=dev n=ansible | ok: [demo03] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,487 p=121884 u=dev n=ansible | ok: [demo04] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,514 p=121884 u=dev n=ansible | ok: [demo05] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,535 p=121884 u=dev n=ansible | ok: [demo06] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,572 p=121884 u=dev n=ansible | ok: [demo07] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,633 p=121884 u=dev n=ansible | ok: [demo08] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,634 p=121884 u=dev n=ansible | ok: [demo09] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,635 p=121884 u=dev n=ansible | ok: [demo01] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,636 p=121884 u=dev n=ansible | ok: [demo10] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,651 p=121884 u=dev n=ansible | ok: [demo02] => {
+    "msg": "Hey there"
+}
+2024-01-20 14:18:10,715 p=121884 u=dev n=ansible | PLAY RECAP *************************************************************************************************************************
+2024-01-20 14:18:10,716 p=121884 u=dev n=ansible | demo01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,717 p=121884 u=dev n=ansible | demo02                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,717 p=121884 u=dev n=ansible | demo03                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,717 p=121884 u=dev n=ansible | demo04                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,717 p=121884 u=dev n=ansible | demo05                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,718 p=121884 u=dev n=ansible | demo06                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,718 p=121884 u=dev n=ansible | demo07                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,719 p=121884 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,719 p=121884 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-20 14:18:10,720 p=121884 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

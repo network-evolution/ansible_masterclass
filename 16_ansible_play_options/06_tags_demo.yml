@@ -1,0 +1,27 @@
+- name: Log Path Demo
+  hosts: demo01
+  gather_facts: false
+  order: inventory
+  tasks:
+    - name: Print hostname
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }}"
+
+    - name: Print hello
+      ansible.builtin.debug:
+        msg: "Hey there"
+      tags: term_msg
+
+    - name: Execute shell
+      ansible.builtin.shell: pwd
+      register: pwd_output
+      tags: [shell_cmd, term_msg]
+
+    - name: Print shell output
+      ansible.builtin.debug:
+        msg: "{{ pwd_output.stdout }}"
+      tags: [shell_cmd, term_msg]
+
+    - name: Print Final Task
+      ansible.builtin.debug:
+        msg: "Final Task"

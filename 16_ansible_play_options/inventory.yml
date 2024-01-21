@@ -1,0 +1,40 @@
+all:
+  children:
+    grouped:
+      children:
+        first_batch:
+          hosts:
+            demo01:
+            demo02:
+    ungrouped:
+      hosts:
+        demo02:
+          ansible_connection: local
+          add_delay: 5
+        demo01:
+          ansible_connection: local
+          add_delay: 5
+        demo03:
+          ansible_connection: local
+          add_delay: 5
+        demo04:
+          ansible_connection: local
+          add_delay: 5
+        demo05:
+          ansible_connection: local
+          add_delay: 5
+        demo06:
+          ansible_connection: local
+          add_delay: 5
+        demo07:
+          ansible_connection: local
+          add_delay: 5
+        demo08:
+          ansible_connection: local
+          add_delay: 5
+        demo09:
+          ansible_connection: local
+          add_delay: 5
+        demo10:
+          ansible_connection: local
+          add_delay: 5

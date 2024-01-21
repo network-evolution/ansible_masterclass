@@ -1,0 +1,29 @@
+---
+- name: Check mode Demo
+  hosts: r2
+  gather_facts: false
+  tasks:
+    - name: Interface Config
+      cisco.ios.ios_interfaces:
+        config:
+          - name: GigabitEthernet0/2
+            description: new_desc3
+            enabled: true
+        state: merged
+      check_mode: true
+      register: intf_config
+
+    - name: Print intf config
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config.commands }}"
+
+    - name: Print Check mode
+      ansible.builtin.debug:
+        msg: "{{ ansible_check_mode }}"
+
+    - name: Print intf config
+      when: not ansible_check_mode
+      ansible.builtin.debug:
+        msg:
+          - "{{ intf_config.after }}"

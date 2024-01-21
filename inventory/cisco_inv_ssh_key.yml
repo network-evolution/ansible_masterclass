@@ -63,6 +63,10 @@ all:
             r2:
               tacacs_server_ip: 192.168.0.6
               ansible_host: 192.168.0.62
+            r91:
+              ansible_host: 192.168.0.91
+            r92:
+              ansible_host: 192.168.0.91              
             # r101:
             #   ansible_host: 192.168.1.101            
     

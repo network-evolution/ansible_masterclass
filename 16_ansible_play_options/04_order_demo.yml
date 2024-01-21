@@ -1,0 +1,13 @@
+---
+- name: Strategies demo
+  hosts: all
+  gather_facts: false
+  order: shuffle
+  tasks:
+    - name: Print hostname
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }}"  
+
+    - name: Print hello
+      ansible.builtin.debug:
+        msg: "Hey there"  

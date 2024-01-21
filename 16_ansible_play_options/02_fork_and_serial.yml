@@ -2,7 +2,11 @@
 - name: Strategies demo
   hosts: all
   gather_facts: false
-  strategy: free
+  strategy: linear
+  serial:
+    - 20%
+    - 30%
+    - 20%
   tasks:
     - name: Add delay
       wait_for:
@@ -11,4 +15,3 @@
     - name: Print hostname
       ansible.builtin.debug:
         msg: "{{ inventory_hostname }}"
-
