@@ -2,7 +2,7 @@
   hosts: r2
   gather_facts: false
   tasks:
-    - name: Config Static ROute
+    - name: Config Static Route
       cisco.ios.static_routes:
         config:
           - address_families:

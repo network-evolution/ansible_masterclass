@@ -1,0 +1,105 @@
+2024-01-21 14:29:58,890 p=143096 u=dev n=ansible | ansible-playbook [core 2.16.1]
+  config file = /home/dev/ansible_masterclass/ansible.cfg
+  configured module search path = ['/home/dev/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/dev/py_venv/venv1/lib/python3.10/site-packages/ansible
+  ansible collection location = /home/dev/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/dev/py_venv/venv1/bin/ansible-playbook
+  python version = 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] (/home/dev/py_venv/venv1/bin/python)
+  jinja version = 3.1.2
+  libyaml = True
+2024-01-21 14:29:58,890 p=143096 u=dev n=ansible | Using /home/dev/ansible_masterclass/ansible.cfg as config file
+2024-01-21 14:29:59,090 p=143096 u=dev n=ansible | host_list declined parsing /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml as it did not pass its verify_file() method
+2024-01-21 14:29:59,090 p=143096 u=dev n=ansible | script declined parsing /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml as it did not pass its verify_file() method
+2024-01-21 14:29:59,098 p=143096 u=dev n=ansible | Parsed /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml inventory source with yaml plugin
+2024-01-21 14:29:59,165 p=143096 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:29:59,190 p=143096 u=dev n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2024-01-21 14:29:59,191 p=143096 u=dev n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-01-21 14:29:59,191 p=143096 u=dev n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-01-21 14:29:59,192 p=143096 u=dev n=ansible | PLAYBOOK: 06_no_log_demo.yml **********************************************************************************************
+2024-01-21 14:29:59,192 p=143096 u=dev n=ansible | 1 plays in 17_task_options/06_no_log_demo.yml
+2024-01-21 14:29:59,194 p=143096 u=dev n=ansible | PLAY [Configure domain name] **********************************************************************************************
+2024-01-21 14:29:59,268 p=143096 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:29:59,276 p=143096 u=dev n=ansible | TASK [Configure user] *****************************************************************************************************
+2024-01-21 14:29:59,547 p=143096 u=dev n=ansible | redirecting (type: become) ansible.builtin.enable to ansible.netcommon.enable
+2024-01-21 14:29:59,808 p=143096 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:29:59,808 p=143096 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:00,752 p=143096 u=dev n=ansible | network_os is set to cisco.ios.ios
+2024-01-21 14:30:00,753 p=143096 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:00,760 p=143116 u=dev n=ansible | <192.168.0.62> USING PYLIBSSH VERSION 1.1.0
+2024-01-21 14:30:00,761 p=143116 u=dev n=ansible | <192.168.0.62> ESTABLISH LIBSSH CONNECTION FOR USER: admin on PORT 22 TO 192.168.0.62
+2024-01-21 14:30:01,100 p=143116 u=dev n=ansible | ssh connection is OK: <pylibsshext.session.Session object at 0x7f7b0bc71620>
+2024-01-21 14:30:06,475 p=143096 u=dev n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines should be similar to how they appear if
+present in the running configuration on device
+
+2024-01-21 14:30:06,475 p=143096 u=dev n=ansible | changed: [r2] => {
+    "banners": {},
+    "changed": true,
+    "commands": [
+        "username demo_user privilege 15 secret p@ssw0rd"
+    ],
+    "invocation": {
+        "module_args": {
+            "after": null,
+            "backup": false,
+            "backup_options": null,
+            "before": null,
+            "defaults": false,
+            "diff_against": null,
+            "diff_ignore_lines": null,
+            "intended_config": null,
+            "lines": [
+                "username demo_user privilege 15 secret p@ssw0rd"
+            ],
+            "match": "line",
+            "multiline_delimiter": "@",
+            "parents": null,
+            "replace": "line",
+            "running_config": null,
+            "save_when": "never",
+            "src": null
+        }
+    },
+    "updates": [
+        "username demo_user privilege 15 secret p@ssw0rd"
+    ]
+}
+2024-01-21 14:30:06,484 p=143096 u=dev n=ansible | PLAY RECAP ****************************************************************************************************************
+2024-01-21 14:30:06,485 p=143096 u=dev n=ansible | r2                         : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-21 14:30:06,586 p=143116 u=dev n=ansible | shutdown complete
+2024-01-21 14:30:35,447 p=143211 u=dev n=ansible | ansible-playbook [core 2.16.1]
+  config file = /home/dev/ansible_masterclass/ansible.cfg
+  configured module search path = ['/home/dev/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /home/dev/py_venv/venv1/lib/python3.10/site-packages/ansible
+  ansible collection location = /home/dev/.ansible/collections:/usr/share/ansible/collections
+  executable location = /home/dev/py_venv/venv1/bin/ansible-playbook
+  python version = 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] (/home/dev/py_venv/venv1/bin/python)
+  jinja version = 3.1.2
+  libyaml = True
+2024-01-21 14:30:35,448 p=143211 u=dev n=ansible | Using /home/dev/ansible_masterclass/ansible.cfg as config file
+2024-01-21 14:30:35,684 p=143211 u=dev n=ansible | host_list declined parsing /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml as it did not pass its verify_file() method
+2024-01-21 14:30:35,685 p=143211 u=dev n=ansible | script declined parsing /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml as it did not pass its verify_file() method
+2024-01-21 14:30:35,693 p=143211 u=dev n=ansible | Parsed /home/dev/ansible_masterclass/inventory/cisco_inv_ssh_key.yml inventory source with yaml plugin
+2024-01-21 14:30:35,773 p=143211 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:35,797 p=143211 u=dev n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2024-01-21 14:30:35,798 p=143211 u=dev n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-01-21 14:30:35,798 p=143211 u=dev n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-01-21 14:30:35,799 p=143211 u=dev n=ansible | PLAYBOOK: 06_no_log_demo.yml **********************************************************************************************
+2024-01-21 14:30:35,800 p=143211 u=dev n=ansible | 1 plays in 17_task_options/06_no_log_demo.yml
+2024-01-21 14:30:35,804 p=143211 u=dev n=ansible | PLAY [Configure domain name] **********************************************************************************************
+2024-01-21 14:30:35,924 p=143211 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:35,937 p=143211 u=dev n=ansible | TASK [Configure user] *****************************************************************************************************
+2024-01-21 14:30:36,263 p=143211 u=dev n=ansible | redirecting (type: become) ansible.builtin.enable to ansible.netcommon.enable
+2024-01-21 14:30:36,574 p=143211 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:36,575 p=143211 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:37,554 p=143211 u=dev n=ansible | network_os is set to cisco.ios.ios
+2024-01-21 14:30:37,555 p=143211 u=dev n=ansible | redirecting (type: action) cisco.ios.ios_config to cisco.ios.ios
+2024-01-21 14:30:37,564 p=143240 u=dev n=ansible | <192.168.0.62> USING PYLIBSSH VERSION 1.1.0
+2024-01-21 14:30:37,565 p=143240 u=dev n=ansible | <192.168.0.62> ESTABLISH LIBSSH CONNECTION FOR USER: admin on PORT 22 TO 192.168.0.62
+2024-01-21 14:30:37,908 p=143240 u=dev n=ansible | ssh connection is OK: <pylibsshext.session.Session object at 0x7f8a3ee9da30>
+2024-01-21 14:30:43,228 p=143211 u=dev n=ansible | changed: [r2] => {
+    "censored": "the output has been hidden due to the fact that 'no_log: true' was specified for this result",
+    "changed": true
+}
+2024-01-21 14:30:43,240 p=143211 u=dev n=ansible | PLAY RECAP ****************************************************************************************************************
+2024-01-21 14:30:43,241 p=143211 u=dev n=ansible | r2                         : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-01-21 14:30:43,351 p=143240 u=dev n=ansible | shutdown complete

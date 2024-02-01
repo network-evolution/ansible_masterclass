@@ -1,0 +1,10 @@
+---
+- name: Configure domain name
+  hosts: r2
+  gather_facts: false
+  tasks:
+    - name: Configure user
+      cisco.ios.ios_config:
+        lines: "username {{ user}} privilege 15 secret {{ pass }}"
+      no_log: true
+      

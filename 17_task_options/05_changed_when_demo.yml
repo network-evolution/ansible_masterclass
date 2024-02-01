@@ -1,0 +1,14 @@
+---
+- name: Changed_when
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Execute shell
+      ansible.builtin.shell: ls
+      register: pwd_output
+      changed_when: pwd_output.stdout != '/home/dev/ansible_masterclass/17_task_options'
+      failed_when: pwd_output.stdout != '/home/dev/ansible_masterclass/17_task_options'
+
+    - name: Print shell output
+      ansible.builtin.debug:
+        msg: "{{ pwd_output.stdout }}"
