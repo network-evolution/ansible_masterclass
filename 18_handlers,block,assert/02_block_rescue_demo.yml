@@ -1,0 +1,64 @@
+---
+- name: Block rescue Demo
+  hosts: routers
+  # gather_facts: false
+  tasks:
+    - name: Print facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+
+    # - name: Gather Interfaces
+    #   cisco.ios.ios_interfaces:
+    #     state: gathered
+    #   register: intf_config
+
+    - name: Block for vIOS Devices
+      when: ansible_facts.net_model == 'IOSv'
+      block:
+        - name: Management interface Config vIOS 
+          cisco.ios.ios_interfaces:
+            config:
+              - name: GigabitEthernet0/0
+                description: vIOS MGMT
+          register: intf_config
+
+        - name: Invalid config line
+          cisco.ios.ios_config:
+            lines: abc
+
+      rescue:
+        - name: Print fail message
+          ansible.builtin.debug:
+            msg: "Task has failed"
+      always:
+        - name: Print intf config
+          ansible.builtin.debug:
+            msg:
+              - "{{ intf_config }}"
+              
+    - name: Block for CSR1000V Devices
+      when: ansible_facts.net_model == 'CSR1000V'
+      block:
+        - name: Management interface Config CSR1000V 
+          cisco.ios.ios_interfaces:
+            config:
+              - name: GigabitEthernet1
+                description: CSR1000V MGMT
+          register: intf_config
+
+        - name: Invalid config line
+          cisco.ios.ios_config:
+            lines: abc
+
+        - name: Print intf config
+          ansible.builtin.debug:
+            msg:
+              - "{{ intf_config }}"
+      rescue:
+        - name: Print fail message
+          ansible.builtin.debug:
+            msg: "Task has failed"
+
+    - name: Print End of the play
+      ansible.builtin.debug:
+        msg: "End of the Play"   
