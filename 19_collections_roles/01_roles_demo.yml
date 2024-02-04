@@ -1,0 +1,21 @@
+- name: Handlers demo
+  hosts: routers
+  gather_facts: false
+  tasks:
+########  handlers ##########################
+    - name: Include new Role
+      when: inventory_hostname == 'r1'
+      ansible.builtin.include_role:
+        name: intf_ip_config
+      vars:
+        intf_name: GigabitEthernet0/1
+        intf_address: 10.10.10.1/28
+
+    - name: Include new Role
+      when: inventory_hostname == 'r2'
+      ansible.builtin.include_role:
+        name: intf_ip_config
+      vars:
+        intf_name: GigabitEthernet0/1
+        intf_address: 10.10.10.2/28
+

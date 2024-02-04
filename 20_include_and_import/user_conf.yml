@@ -1,0 +1,16 @@
+---
+# - name: Set fact v
+#   ansible.builtin.set_fact:
+#     v: 0
+
+- name: Generate command for user creation
+  ansible.builtin.debug:
+    msg: "username {{ new_user }} privilege 15 secret {{ new_password }}"
+
+- name: Print message
+  ansible.builtin.debug:
+    msg: "Successfully generated conf for {{ new_user }} {{ var_frm_inv }}"
+
+- name: Print v
+  ansible.builtin.debug:
+    msg: "{{ v }}"

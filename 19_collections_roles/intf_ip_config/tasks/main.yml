@@ -1,0 +1,16 @@
+---
+- name: L3 Config
+  cisco.ios.ios_l3_interfaces:
+    config:
+      - name: "{{ intf_name }}"
+        ipv4:
+          - address: "{{ intf_address }}"
+    state: merged
+  register: l3_config_output
+  notify:
+    - ip change post action
+
+- name: Print Output
+  ansible.builtin.debug:
+    msg: "{{ l3_config_output }}"
+

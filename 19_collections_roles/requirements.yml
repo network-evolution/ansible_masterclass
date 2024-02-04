@@ -1,0 +1,8 @@
+collections:
+  # - name: cisco.ios
+  #   version: 6.1.1
+  # - name: https://github.com/ansible-collections/cisco.ios.git
+  #   type: git
+  #   version: v6.1.1
+  - name: cisco-ios-6.1.1.tar.gz
+    type: file

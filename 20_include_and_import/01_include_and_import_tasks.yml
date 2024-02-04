@@ -1,0 +1,36 @@
+- name: Include vs Import
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: User Input
+      ansible.builtin.pause:
+        prompt: Enter Username
+      register: p_user
+
+    - name: User Input
+      ansible.builtin.pause:
+        prompt: Enter password
+        echo: false
+      register: p_password
+
+    - name: Set fact
+      ansible.builtin.set_fact:
+        new_user: "{{ p_user.user_input }}"
+        new_password: "{{ p_password.user_input }}"
+
+    - name: Set fact v
+      ansible.builtin.set_fact:
+        v: 0
+    ############ include task ####################
+    # - name: include task
+    #   ansible.builtin.include_tasks: "{{ file_name }}"
+
+
+    ############ import task ####################
+    - name: import task
+      ansible.builtin.import_tasks: user_conf.yml
+      vars:
+        v : 100
+
+
+
