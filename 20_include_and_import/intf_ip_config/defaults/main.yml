@@ -1,0 +1,3 @@
+---
+bkp_file_path: "/home/dev/ansible_masterclass/19_collections_roles/backup"
+intf_address: 10.10.10.1/28

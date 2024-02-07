@@ -1,0 +1,23 @@
+--- 
+- name: Set fact for v
+  ansible.builtin.set_fact:
+    v : 1
+- name: L3 Config
+  cisco.ios.ios_l3_interfaces:
+    config:
+      - name: "{{ intf_name }}"
+        ipv4:
+          - address: "{{ intf_address }}"
+    state: merged
+  register: l3_config_output
+  notify:
+    - ip change post action
+  failed_when: false
+
+- name: Print Output
+  ansible.builtin.debug:
+    msg: "{{ l3_config_output }}"
+
+- name: Print v
+  ansible.builtin.debug:
+    msg: "{{ v }}"

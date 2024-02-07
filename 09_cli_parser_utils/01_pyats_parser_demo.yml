@@ -19,15 +19,15 @@
           - "{{ show_ver_parser.parsed.version.system_image }}"
           - "{{ sh_ver.version.hostname }}"
 
-      - name: Ansible CLI Parse
-        ansible.utils.cli_parse:
-          command: show ip interface brief
-          parser:
-            name: ansible.netcommon.pyats
-          set_fact: sh_ip_int
-        register: show_ip_int_parser
+    - name: Ansible CLI Parse
+      ansible.utils.cli_parse:
+        command: show ip interface brief
+        parser:
+          name: ansible.netcommon.pyats
+        set_fact: sh_ip_int
+      register: show_ip_int_parser
 
-      - name: Print sh_ip_int
-        ansible.builtin.debug:
-          msg: 
-            - "{{ show_ip_int_parser }}"
+    - name: Print sh_ip_int
+      ansible.builtin.debug:
+        msg: 
+          - "{{ show_ip_int_parser }}"

@@ -79,11 +79,12 @@ all:
         r1:
         r2:
         r3:
-    ungrouped:
-      hosts:
-        local_test:
-          ansible_connection: local
-        localhost:
-          ansible_connection: local
-          var_frm_inv: "this is from inv"
-          file_name: user_conf.yml
+    # ungrouped:
+    #   hosts:
+    #     local_test:
+    #       ansible_connection: local
+    #     localhost:
+    #       ansible_connection: local
+    #       var_frm_inv: "this is from inv"
+    #       file_name: user_conf.yml
+

@@ -1,0 +1,30 @@
+- name: Handlers demo
+  hosts: r1,r2
+  gather_facts: false
+  tasks:
+
+    - name: Print Message
+      ansible.builtin.debug:
+        msg: "This is the first task"
+
+    - name: Set fact for v
+      ansible.builtin.set_fact:
+        v : 0
+########  include_role ##########################
+    # - name: Include new Role
+    #   ansible.builtin.include_role:
+    #     name: intf_ip_config
+    #   vars:
+    #     intf_name: Loopback1001
+    #     intf_address: 1.1.1.1/32
+
+
+########  import_role ##########################
+    - name: Import new Role
+      ansible.builtin.import_role:
+        name: intf_ip_config
+      vars:
+        intf_name: Loopback1001
+        intf_address: 1.1.1.1/32
+
+

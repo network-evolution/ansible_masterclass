@@ -5,7 +5,7 @@
   tasks:
     - name: Ansible CLI Parse
       ansible.utils.cli_parse:
-        command: show ip interface brief
+        command: "show ip interface brief"
         parser:
           name: ansible.netcommon.ntc_templates
         set_fact: sh_ver

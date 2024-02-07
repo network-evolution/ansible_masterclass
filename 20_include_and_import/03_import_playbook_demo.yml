@@ -1,0 +1,25 @@
+- name: Include vs Import
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: User Input
+      ansible.builtin.pause:
+        prompt: Enter Username
+      register: p_user
+
+    - name: User Input
+      ansible.builtin.pause:
+        prompt: Enter password
+        echo: false
+      register: p_password
+
+    - name: Set fact
+      ansible.builtin.set_fact:
+        new_user: "{{ p_user.user_input }}"
+        new_password: "{{ p_password.user_input }}"
+
+- name: Import playbook task
+  ansible.builtin.import_playbook: 02_include_and_import_roles.yml
+
+
+  
