@@ -1,0 +1,35 @@
+---
+- name: Facts to CSV
+  hosts: routers
+  gather_facts: true
+  tasks:
+    - name: Print Facts
+      ansible.builtin.debug:
+        msg:
+          -  "{{ ansible_facts }}"
+          - "{{ ansible_play_hosts }}"
+          - "{{ hostvars['r1']}}"
+
+    - name: Create facts_dict
+      ansible.builtin.set_fact:
+        facts_dict: "{{ facts_dict | default({}) | combine( { item: hostvars[item] }) }}"
+      loop: "{{ ansible_play_hosts }}"
+      run_once: true
+
+    - name: Print facts_dict
+      ansible.builtin.debug:
+        msg: "{{ facts_dict }}"
+      run_once: true
+
+    - name: Facts to CSV task
+      facts_to_csv:
+        device_facts: "{{ facts_dict }}"
+        dest_csv_path: '/home/dev/ansible_masterclass/21_custom_module' 
+        dest_csv_file: new_file.csv
+      run_once: true
+      register: module_output
+    
+    - name: Print Custom module output
+      ansible.builtin.debug:
+        msg: "{{ module_output }}"
+      run_once: true    

@@ -1,0 +1,20 @@
+---
+- name: REST API Get
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Get interfaces
+      ansible.builtin.uri:
+        url: https://{{ ansible_host }}/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet
+        # user: admin
+        # password: admin
+        method: GET
+        headers:
+          Accept: application/yang-data+json
+          Authorization: "Basic YWRtaW46YWRtaW4="
+        validate_certs: false
+      register: int_conf
+
+    - name: Print data
+      ansible.builtin.debug:
+        msg: "{{ int_conf['json'] }}"

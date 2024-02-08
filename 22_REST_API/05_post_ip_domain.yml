@@ -1,0 +1,23 @@
+---
+- name: REST API POST Config
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: POST Config
+      ansible.builtin.uri:
+        url: https://{{ ansible_host }}/restconf/data/Cisco-IOS-XE-native:native/ip/domain
+        method: POST
+        body: {"name": "abc1.com"}
+        body_format: json
+        headers:
+          Accept: application/yang-data+json
+          Authorization: "Basic YWRtaW46YWRtaW4="
+          Content-Type: application/yang-data+json
+        validate_certs: false
+        status_code: 204,201
+      register: device_conf
+
+    - name: Print data
+      ansible.builtin.debug:
+        msg: 
+          - "{{ device_conf }}"

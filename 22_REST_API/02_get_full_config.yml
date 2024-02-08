@@ -1,0 +1,20 @@
+---
+- name: REST API Get Config
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Get Config
+      ansible.builtin.uri:
+        url: https://{{ ansible_host }}/restconf/data/Cisco-IOS-XE-native:native
+        method: GET
+        headers:
+          Accept: application/yang-data+json
+          Authorization: "Basic YWRtaW46YWRtaW4="
+        validate_certs: false
+      register: device_conf
+
+    - name: Print data
+      ansible.builtin.debug:
+        msg: 
+          - "{{ device_conf['json']['Cisco-IOS-XE-native:native']['hostname'] }}"
+          - "{{ device_conf['json']['Cisco-IOS-XE-native:native']['username'] }}"

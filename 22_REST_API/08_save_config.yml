@@ -1,0 +1,20 @@
+---
+- name: REST API Save Config
+  hosts: r3
+  gather_facts: false
+  tasks:
+    - name: Save Config
+      ansible.builtin.uri:
+        url: https://{{ ansible_host }}/restconf/operations/cisco-ia:save-config
+        method: POST
+        headers:
+          Accept: application/yang-data+json
+          Authorization: "Basic YWRtaW46YWRtaW4="
+        validate_certs: false
+        status_code: 200
+      register: device_conf
+
+    - name: Print data
+      ansible.builtin.debug:
+        msg: 
+          - "{{ device_conf }}"

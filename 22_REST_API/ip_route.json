@@ -1,0 +1,15 @@
+{
+    "Cisco-IOS-XE-native:route":{
+        "ip-route-interface-forwarding-list":[
+          {
+              "prefix":"1.1.1.22",
+              "mask":"255.255.255.255",
+              "fwd-list":[
+                {
+                    "fwd":"GigabitEthernet1"
+                }
+              ]
+          }
+        ]
+    }
+  }
