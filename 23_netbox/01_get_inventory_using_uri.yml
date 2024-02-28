@@ -1,0 +1,24 @@
+---
+- name: Netbox from URI
+  hosts: localhost
+  gather_facts: false
+  vars:
+    netbox_url: https://192.168.0.222
+    netbox_token: "887779fa705e82996c34fe21a149679835da5882"
+  tasks:
+    - name: Get devices
+      ansible.builtin.uri:
+        url: "{{ netbox_url }}/api/dcim/devices"
+        method: GET
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Accept: 'application/json'
+        body_format: json
+        status_code: [200, 201]
+        validate_certs: false
+      register: get_devices
+
+    - name: Print response
+      ansible.builtin.debug:
+        msg: "{{ get_devices }}"
+

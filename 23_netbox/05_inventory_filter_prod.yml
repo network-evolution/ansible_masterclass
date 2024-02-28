@@ -1,0 +1,12 @@
+---
+# this requires pytz (pip install pytz)
+plugin: netbox.netbox.nb_inventory
+api_endpoint: "https://192.168.0.222"
+token: "887779fa705e82996c34fe21a149679835da5882"
+validate_certs: false
+config_context: false
+group_by:
+ - sites
+ - device_types
+query_filters:
+  - site: nyc_prod

@@ -18,3 +18,5 @@
       ansible.builtin.debug:
         msg: 
           - "{{ device_conf }}"
+
+          
