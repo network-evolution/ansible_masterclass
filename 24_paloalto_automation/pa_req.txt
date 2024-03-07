@@ -1,0 +1,4 @@
+pan-os-python==1.8.0
+pan-python==0.17.0
+xmltodict==0.12.0
+panos-upgrade-assurance==0.3.0

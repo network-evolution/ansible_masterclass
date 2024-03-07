@@ -1,5 +1,12 @@
 all:
   children:
+    pa_firewalls:
+      hosts:
+        PA01:
+          palo_cred:
+            ip_address: 192.168.0.22
+            username: admin
+            password: Evolve@123
     switches:
       hosts:
         sw1:

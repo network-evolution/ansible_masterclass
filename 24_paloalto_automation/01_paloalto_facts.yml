@@ -1,0 +1,20 @@
+---
+- name: Gather PaloAltoFacts
+  hosts: PA01
+  gather_facts: false
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Gather facts
+      paloaltonetworks.panos.panos_facts:
+        provider: "{{ palo_cred }}"
+        gather_subset: ['system']
+      register: pa_facts
+
+    - name: Print facts
+      ansible.builtin.debug:
+        msg:
+          - "Host Name is: {{pa_facts.ansible_facts.ansible_net_hostname }}"
+          - "Version is: {{pa_facts.ansible_facts.ansible_net_version }}"
+          - "{{ ansible_playbook_python }}"
