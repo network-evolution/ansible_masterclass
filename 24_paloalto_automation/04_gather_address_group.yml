@@ -1,0 +1,26 @@
+---
+- name: Gather PaloAlto Facts
+  gather_facts: false
+  hosts: PA01
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Print pa facts
+      paloaltonetworks.panos.panos_address_group:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        gathered_filter: "*"
+      register: addr_group
+
+    - name: Print addr obj
+      ansible.builtin.debug:
+        msg: "{{ addr_group }}" 
+
+    - name: Print group contains WAN_DNS_01
+      ansible.builtin.debug:
+        msg: "{{ addr_group.gathered | json_query('[?contains(static_value, `WAN_DNS_01`)]') }}"
+
+    - name: Print group contains LAN_host01
+      ansible.builtin.debug:
+        msg: "{{ addr_group.gathered | json_query('[?contains(static_value, `LAN_host01`)]') }}"

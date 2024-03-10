@@ -1,11 +1,11 @@
 ---
 - name: NTC Templates Parser Demo
-  hosts: r2
+  hosts: r101
   gather_facts: false
   tasks:
     - name: Ansible CLI Parse
       ansible.utils.cli_parse:
-        command: "show ip interface brief"
+        command: "show version"
         parser:
           name: ansible.netcommon.ntc_templates
         set_fact: sh_ver

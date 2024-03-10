@@ -1,0 +1,23 @@
+---
+- name: Gather PaloAlto Address Objects
+  hosts: PA01
+  gather_facts: false
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Gather Address Object
+      paloaltonetworks.panos.panos_address_object:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        # gathered_filter: "*"
+        # gathered_filter: "True"
+        # gathered_filter: "name matches-regex .*?"
+        # gathered_filter: "name matches-regex LAN*"
+        # gathered_filter: "description contains dns"
+        gathered_filter: "description starts-with public"
+      register: obj_details
+
+    - name: Print Address Objects
+      ansible.builtin.debug:
+        msg: "{{ obj_details }}"

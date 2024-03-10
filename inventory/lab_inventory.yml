@@ -3,10 +3,6 @@ all:
     pa_firewalls:
       hosts:
         PA01:
-          palo_cred:
-            ip_address: 192.168.0.22
-            username: admin
-            password: Evolve@123
     switches:
       hosts:
         sw1:
@@ -74,8 +70,8 @@ all:
             #   ansible_host: 192.168.0.91
             # r92:
             #   ansible_host: 192.168.0.92              
-            # r101:
-            #   ansible_host: 192.168.1.101            
+            r101:
+              ansible_host: 192.168.0.101            
     
     # routers100:
     #   hosts:

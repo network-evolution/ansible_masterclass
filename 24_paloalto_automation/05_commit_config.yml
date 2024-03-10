@@ -1,0 +1,29 @@
+---
+- name: Gather PaloAlto Facts
+  gather_facts: false
+  hosts: PA01
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Execute config list changes
+      paloaltonetworks.panos.panos_op:
+        provider: '{{ palo_cred }}'
+        cmd: 'show config list changes'
+      register: conf_changes
+
+    - name: Print Changes
+      ansible.builtin.debug:
+        msg: '{{ conf_changes.stdout }}'
+
+    - name: Commit the changes
+      paloaltonetworks.panos.panos_commit:
+        provider: '{{ palo_cred }}'
+        # exclude_device_and_network: true
+        # exclude_policy_and_objects: true
+        description: commited by ansible
+      register: conf_commit
+
+    - name: Print Changes
+      ansible.builtin.debug:
+        msg: '{{ conf_commit }}'

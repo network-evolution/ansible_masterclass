@@ -17,4 +17,3 @@
         msg:
           - "Host Name is: {{pa_facts.ansible_facts.ansible_net_hostname }}"
           - "Version is: {{pa_facts.ansible_facts.ansible_net_version }}"
-          - "{{ ansible_playbook_python }}"

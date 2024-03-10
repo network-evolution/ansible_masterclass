@@ -1,0 +1,37 @@
+---
+- name: Gather Security Rule
+  gather_facts: false
+  hosts: PA01
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Print Security Rule
+      paloaltonetworks.panos.panos_security_rule:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        gathered_filter: "*"
+      register: security_rule
+
+    - name: Print addr obj
+      ansible.builtin.debug:
+        msg: "{{ security_rule }}" 
+
+    - name: Rule Operation
+      paloaltonetworks.panos.panos_security_rule:
+        provider: "{{ palo_cred }}"
+        rule_name: "Test Rule1"
+        source_zone: ['trust']
+        destination_zone: ['untrust']
+        source_ip: ["LAN_host02", "Range_Wifi_AP"]
+        destination_ip: ["any"]
+        action: "allow"
+        state: absent
+        # disabled: true
+        location: after
+        existing_rule: LAN-to-Internet
+      register: rule_response
+
+    - name: Print rule_response
+      ansible.builtin.debug:
+        msg: "{{ rule_response }}" 
