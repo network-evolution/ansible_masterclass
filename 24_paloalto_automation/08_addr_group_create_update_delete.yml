@@ -1,0 +1,50 @@
+---
+- name: COnfigure Addr Group
+  gather_facts: false
+  hosts: PA01
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Gather Address Object
+      paloaltonetworks.panos.panos_address_object:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        gathered_filter: "name matches-regex LAN_host*"
+      register: obj_details
+
+    - name: Print Address Objects
+      ansible.builtin.debug:
+        msg: "{{ obj_details }}"
+
+    - name: Create list of address names from filter
+      ansible.builtin.set_fact:
+        lan_hosts: "{{ obj_details.gathered | json_query('[].name') }}"
+      
+    - name: Print lan_hosts
+      ansible.builtin.debug:
+        msg: "{{ lan_hosts }}"
+
+    - name: Gather Addr Group
+      paloaltonetworks.panos.panos_address_group:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        gathered_filter: "*"
+      register: addr_group
+
+    - name: Print addr obj
+      ansible.builtin.debug:
+        msg: "{{ addr_group }}" 
+
+    - name: Create Group
+      paloaltonetworks.panos.panos_address_group:
+        provider: "{{ palo_cred }}"
+        state: present
+        name: LAN_Group_New
+        description: Dynamic Lan Group created using Ansible
+        static_value: "{{ lan_hosts }}"
+      register: create_group
+
+    - name: Print create_group
+      ansible.builtin.debug:
+        msg: "{{ create_group }}" 

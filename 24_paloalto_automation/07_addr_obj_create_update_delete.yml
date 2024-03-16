@@ -1,0 +1,41 @@
+---
+- name: Gather PaloAlto Address Objects
+  hosts: PA01
+  gather_facts: false
+  connection: local
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  tasks:
+    - name: Gather Address Object
+      paloaltonetworks.panos.panos_address_object:
+        provider: "{{ palo_cred }}"
+        state: gathered
+        gathered_filter: "*"
+      register: obj_details
+
+    - name: Print Address Objects
+      ansible.builtin.debug:
+        msg: "{{ obj_details }}"
+
+    - name: Create Addr Object
+      paloaltonetworks.panos.panos_address_object:
+        provider: "{{ palo_cred }}"
+        state: present
+        name: "LAN_host01"
+        address_type: "ip-netmask"
+        description: "LAN desc2"
+        value: "172.16.100.111"
+      register: lan_host01
+
+    - name: Create Addr Object
+      paloaltonetworks.panos.panos_address_object:
+        provider: "{{ palo_cred }}"
+        state: merged
+        name: "LAN_host01"
+        address_type: "ip-netmask"
+        value: "172.16.100.111"
+      register: lan_host01
+
+    - name: Print Address Objects Creation
+      ansible.builtin.debug:
+        msg: "{{ lan_host01 }}"              
