@@ -769,3 +769,12 @@
 2024-01-20 14:18:10,719 p=121884 u=dev n=ansible | demo08                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-01-20 14:18:10,719 p=121884 u=dev n=ansible | demo09                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-01-20 14:18:10,720 p=121884 u=dev n=ansible | demo10                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-04-19 13:48:02,090 p=82524 u=dev n=ansible | PLAY [Strategies demo] ******************************************************************************************************************************************
+2024-04-19 13:48:02,156 p=82524 u=dev n=ansible | TASK [Add delay] ************************************************************************************************************************************************
+2024-04-19 13:48:09,463 p=82524 u=dev n=ansible | ok: [demo03]
+2024-04-19 13:48:09,575 p=82524 u=dev n=ansible | ok: [demo07]
+2024-04-19 13:48:09,598 p=82524 u=dev n=ansible | ok: [demo06]
+2024-04-19 13:48:09,641 p=82524 u=dev n=ansible | ok: [demo04]
+2024-04-19 13:48:09,674 p=82524 u=dev n=ansible | ok: [demo05]
+2024-04-19 13:48:15,147 p=82524 u=dev n=ansible |  [ERROR]: User interrupted execution
+

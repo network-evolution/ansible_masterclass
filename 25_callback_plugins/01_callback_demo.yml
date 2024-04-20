@@ -1,0 +1,13 @@
+---
+- name: Callback demo
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Add delay
+      wait_for:
+        timeout: "{{ add_delay }}"
+
+    - name: Print hostname
+      ansible.builtin.debug:
+        msg: "{{ inventory_hostname }}"
+
