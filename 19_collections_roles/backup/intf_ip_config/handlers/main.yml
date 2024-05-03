@@ -1,0 +1,13 @@
+---
+- name: Save Config
+  cisco.ios.ios_config:
+    backup: true
+    backup_options:
+      dir_path: "{{ bkp_file_path }}"
+    save_when: always
+  listen: ip change post action
+
+- name: Print Command
+  ansible.builtin.debug:
+    msg: "{{ l3_config_output.commands }}"
+  listen: ip change post action

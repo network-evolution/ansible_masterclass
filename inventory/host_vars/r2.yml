@@ -1,3 +1,4 @@
+sample_ip: 20.1.1.1/24
 ip_domain_name: from_r2_hostvar.com
 dc1_domain: dc_from_r2.com
 interface_list:
