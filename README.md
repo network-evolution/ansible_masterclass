@@ -7,6 +7,9 @@ This repository contains all the playbooks, inventory files, templates, and conf
 ## 🎓 Course Link
 Enroll in the full course here: **[[Ansible Course for Network Engineers](https://www.udemy.com/course/ansible-course-for-network-engineers/?referralCode=F48EC2196525D2169E07)](https://www.udemy.com/course/ansible-course-for-network-engineers/?referralCode=F48EC2196525D2169E07)**
 
+## 🚀 More Courses by NetworkEvolution
+Ready to take your automation skills to the next level? Check out my other courses:
+* **[[Python for Network Engineers](https://www.udemy.com/course/python-for-network-engineers/?referralCode=35A75AAE1ACA94A15829)](https://www.udemy.com/course/python-for-network-engineers/?referralCode=35A75AAE1ACA94A15829)** - Master Python programming from scratch with a focus on real-world network automation use cases.
 
 ---
 
